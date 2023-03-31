@@ -2,7 +2,7 @@
 // function setup() {
 //   loadFont("assets/DS_DIGI.TTF", drawText);
 // }
-
+background(255, 205, 255);
 //interface
 strokeWeight(3);
 //interface background
@@ -99,23 +99,54 @@ function keyCardShadow() {
   rect(165, 731, 55, 37.5, 5);
 }
 keyCardShadow();
+let keyCardColorR = 100;
+let keyCardColorG = 100;
+let keyCardColorB = 200;
 
-function keyCard() {
-  fill(250, 250, 250);
-  scale(4);
-  rect(95, 101, 55, 37.5, 5);
+let playerColorR = 100;
+let playerColorG = 25;
+let playerColorB = 105;
+let keyCardX = 0;
+let keyCardY = 0;
+
+function keyCard(keyCardX, keyCardY) {
+  strokeWeight(0.75);
+  stroke(0, 0, 0);
+  fill(30, 30, 30);
+  scale(2);
+  rect(keyCardX - 5, keyCardY + 1, 55, 37.5, 5);
+  //card color
+  push();
+  noStroke();
+  fill(keyCardColorR, keyCardColorG, keyCardColorB);
+  rect(keyCardX + 32, keyCardY + 1.25, 12, 37);
+  pop();
   //picture on the keycard
   //frame
-  noFill();
+  fill(255, 255, 255);
   strokeWeight(1);
   stroke(0, 0, 0);
-  rect(100, 110, 15, 20, 1);
+  rect(keyCardX, keyCardY + 10, 15, 20, 1);
   //character
-  strokeWeight(0.5);
   beginShape();
+  fill(playerColorR, playerColorG, playerColorB);
+  strokeWeight(0.5);
+  stroke(0, 0, 0);
+  vertex(keyCardX + 14.75, keyCardY + 18);
+  bezierVertex(
+    keyCardX + 14.75,
+    keyCardY + 18,
+    keyCardX + 10,
+    keyCardY + 10,
+    keyCardX + 6,
+    keyCardY + 19
+  );
+  vertex(keyCardX + 5, keyCardY + 29.75);
+  vertex(keyCardX + 14.75, keyCardY + 29.75);
+  vertex(keyCardX + 14.75, keyCardY + 18);
   endShape();
   //vicer
   fill(0, 150, 200);
-  ellipse(108, 119, 10 - 3, 7 - 3);
+  ellipse(keyCardX + 8, keyCardY + 20, 10 - 3, 7 - 3);
 }
-keyCard();
+keyCard(100, 100);
