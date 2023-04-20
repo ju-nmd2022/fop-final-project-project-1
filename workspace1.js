@@ -12,8 +12,8 @@ background(255, 255, 255);
 function player(playerX, playerY, rotation) {
   push();
   translate(playerX, playerY);
-  rotate(1.55);
   rotate(rotation);
+  rotate(1.55);
   push();
 
   strokeWeight(2);
@@ -21,14 +21,14 @@ function player(playerX, playerY, rotation) {
 
   //backpack
   rect();
-  rect(4, 13, 22, 9, 3);
+  rect(-11, 5.5, 22, 9, 3);
 
   //body
-  rect(0, 0, 30, 15, 10);
+  rect(-15, -7.5, 30, 15, 10);
 
   //visor
   fill(0, 190, 255);
-  rect(0 + 5, 0 - 4, 20, 10, 15);
+  rect(-10, -11, 20, 10, 15);
   pop();
 
   // line in visor
@@ -37,8 +37,8 @@ function player(playerX, playerY, rotation) {
   strokeWeight(1.5);
   stroke(255, 255, 255);
   noFill();
-  vertex(0 + 9, 0 + 2);
-  bezierVertex(0 + 7, 0 + 3, 0 + 13, 0 - 5, 0 + 17, 0);
+  vertex(-4.5, -4);
+  bezierVertex(0 - 7, 0 - 3, 0 + 13, 0 - 5, 0 + 17, 0);
 
   endShape();
   pop();
@@ -110,6 +110,8 @@ function draw() {
     playerSpeed = 2;
   } else if (keyIsDown(83)) {
     playerSpeed = -2;
+  } else {
+    playerSpeed = 0;
   }
   if (keyIsDown(65)) {
     rotation = rotation - 0.05;
