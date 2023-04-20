@@ -3,30 +3,32 @@
 //   background(255, 255, 255);
 // }
 
-let playerX = 100;
-let playerY = 100;
-
 let enemyX = 200;
 let enemyY = 200;
 
 background(255, 255, 255);
 
 //player model
-function player() {
+function player(playerX, playerY, rotation) {
   push();
+  translate(playerX, playerY);
+  rotate(1.55);
+  rotate(rotation);
+  push();
+
   strokeWeight(2);
   fill(255, 255, 0);
 
   //backpack
   rect();
-  rect(playerX + 4, playerY + 13, 22, 9, 3);
+  rect(4, 13, 22, 9, 3);
 
   //body
-  rect(playerX, playerY, 30, 15, 10);
+  rect(0, 0, 30, 15, 10);
 
   //visor
   fill(0, 190, 255);
-  rect(playerX + 5, playerY - 4, 20, 10, 15);
+  rect(0 + 5, 0 - 4, 20, 10, 15);
   pop();
 
   // line in visor
@@ -35,17 +37,11 @@ function player() {
   strokeWeight(1.5);
   stroke(255, 255, 255);
   noFill();
-  vertex(playerX + 9, playerY + 2);
-  bezierVertex(
-    playerX + 7,
-    playerY + 3,
-    playerX + 13,
-    playerY - 5,
-    playerX + 17,
-    playerY
-  );
+  vertex(0 + 9, 0 + 2);
+  bezierVertex(0 + 7, 0 + 3, 0 + 13, 0 - 5, 0 + 17, 0);
 
   endShape();
+  pop();
   pop();
 }
 
@@ -97,6 +93,29 @@ function enemy() {
   endShape();
   pop();
 }
-background(211, 211, 211);
-player(playerX, playerY);
-enemy(enemyX, enemyY);
+
+let playerX = 50;
+let playerY = 100;
+let rotation = 0;
+let playerSpeed = 0;
+
+function draw() {
+  background(211, 211, 211);
+  player(playerX, playerY, rotation);
+
+  playerX += Math.cos(rotation) * playerSpeed;
+  playerY += Math.sin(rotation) * playerSpeed;
+
+  if (keyIsDown(87)) {
+    playerSpeed = 2;
+  } else if (keyIsDown(83)) {
+    playerSpeed = -2;
+  }
+  if (keyIsDown(65)) {
+    rotation = rotation - 0.05;
+  } else if (keyIsDown(68)) {
+    rotation = rotation + 0.05;
+  }
+
+  enemy(enemyX, enemyY);
+}
