@@ -13,7 +13,7 @@ function player(playerX, playerY, rotation) {
   push();
   translate(playerX, playerY);
   rotate(rotation);
-  rotate(1.55);
+  rotate(1.56);
   push();
 
   strokeWeight(2);
