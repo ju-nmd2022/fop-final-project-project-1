@@ -3,6 +3,8 @@
 //   background(255, 255, 255);
 // }
 
+import Enemy from "./enemy";
+
 let enemyX = 200;
 let enemyY = 200;
 
@@ -118,6 +120,8 @@ function draw() {
   } else if (keyIsDown(68)) {
     rotation = rotation + 0.05;
   }
+  let EnemyOne = new Enemy(300, 300, 1);
 
   enemy(enemyX, enemyY);
+  EnemyOne.draw();
 }

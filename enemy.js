@@ -3,6 +3,20 @@ class Enemy {
     this.x = x;
     this.y = y;
     this.rotation = rotation;
+    this.rotationSpeed = 0.02;
+    this.lastSwitchTime = 0;
+  }
+
+  update() {
+    // Check if it's been 3 seconds since the last switch
+    if (millis() - this.lastSwitchTime > 3000) {
+      // Change the rotation speed direction
+      this.rotationSpeed *= -1;
+      // Update the last switch time to now
+      this.lastSwitchTime = millis();
+    }
+    // Update the rotation based on the current speed
+    this.rotation += this.rotationSpeed;
   }
 
   draw() {
@@ -34,22 +48,18 @@ class Enemy {
     fill(0, 190, 255);
     rect(-10, -11, 20, 10, 15);
 
-    // line in visor
-    beginShape();
-    strokeWeight(1.5);
-    stroke(255, 255, 255);
-    noFill();
-    vertex(-4.5, -4);
-    bezierVertex(0 - 7, 0 - 3, 0 + 13, 0 - 5, 0 + 17, 0);
-    endShape();
-
     pop();
   }
 }
 
 let Enemy1 = new Enemy(100, 100, 0);
+let Enemy2 = new Enemy(200, 200, 3);
 
 function draw() {
   background(255, 155, 200);
   Enemy1.draw();
+  Enemy1.update();
+
+  Enemy2.draw();
+  Enemy2.update();
 }
