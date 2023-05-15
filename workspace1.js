@@ -107,9 +107,9 @@ function draw() {
   playerY += Math.sin(rotation) * playerSpeed;
 
   if (keyIsDown(87)) {
-    playerSpeed = 2;
+    playerSpeed = 3;
   } else if (keyIsDown(83)) {
-    playerSpeed = -2;
+    playerSpeed = -3;
   } else {
     playerSpeed = 0;
   }
