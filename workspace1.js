@@ -98,15 +98,15 @@ function enemy() {
 
 let playerX = 50;
 let playerY = 100;
-let rotation = 0;
+let playerrotation = 0;
 let playerSpeed = 0;
 
 function draw() {
   background(211, 211, 211);
-  player(playerX, playerY, rotation);
+  player(playerX, playerY, playerrotation);
 
-  playerX += Math.cos(rotation) * playerSpeed;
-  playerY += Math.sin(rotation) * playerSpeed;
+  playerX += Math.cos(playerrotation) * playerSpeed;
+  playerY += Math.sin(playerrotation) * playerSpeed;
 
   if (keyIsDown(87)) {
     playerSpeed = 3;
@@ -116,9 +116,9 @@ function draw() {
     playerSpeed = 0;
   }
   if (keyIsDown(65)) {
-    rotation = rotation - 0.05;
+    playerrotation = playerrotation - 0.05;
   } else if (keyIsDown(68)) {
-    rotation = rotation + 0.05;
+    playerrotation = playerrotation + 0.05;
   }
   let EnemyOne = new Enemy(300, 300, 1);
 
