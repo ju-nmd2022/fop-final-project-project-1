@@ -1,4 +1,4 @@
-class Player {
+export default class Player {
   constructor(playerX, playerY, playerRotation) {
     this.playerX = playerX;
     this.playerY = playerY;
@@ -50,8 +50,6 @@ class Player {
 let player = new Player(50, 100, 0);
 
 function draw() {
-  background(211, 211, 211);
-
   //W key
   if (keyIsDown(87)) {
     player.setSpeed(3);

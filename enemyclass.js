@@ -1,4 +1,4 @@
-class Enemy {
+export default class Enemy {
   constructor(enemyX, enemyY, enemyRotation) {
     this.enemyX = enemyX;
     this.enemyY = enemyY;
@@ -53,10 +53,10 @@ class Enemy {
 }
 
 let enemy1 = new Enemy(100, 100, 0);
-let enemy2 = new Enemy(200, 200, 3);
+let enemy2 = new Enemy(150, 200, 3);
 
 function draw() {
-  background(255, 155, 200);
+  // background(255, 155, 200);
   enemy1.display();
   enemy1.update();
 
