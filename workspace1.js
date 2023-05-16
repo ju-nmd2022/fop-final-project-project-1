@@ -3,7 +3,7 @@
 //   background(255, 255, 255);
 // }
 
-import Enemy from "./enemy";
+import Enemy from "./enemyclass";
 
 let enemyX = 200;
 let enemyY = 200;
@@ -22,7 +22,6 @@ function player(playerX, playerY, rotation) {
   fill(255, 255, 0);
 
   //backpack
-  rect();
   rect(-11, 5.5, 22, 9, 3);
 
   //body

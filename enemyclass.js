@@ -1,8 +1,8 @@
 class Enemy {
-  constructor(x, y, rotation) {
-    this.x = x;
-    this.y = y;
-    this.rotation = rotation;
+  constructor(enemyX, enemyY, enemyRotation) {
+    this.enemyX = enemyX;
+    this.enemyY = enemyY;
+    this.enemyRotation = enemyRotation;
     this.rotationSpeed = 0.02;
     this.lastSwitchTime = 0;
   }
@@ -16,15 +16,15 @@ class Enemy {
       this.lastSwitchTime = millis();
     }
     // Update the rotation based on the current speed
-    this.rotation += this.rotationSpeed;
+    this.enemyRotation += this.rotationSpeed;
   }
 
-  draw() {
+  display() {
     push();
-    translate(this.x, this.y);
-    rotate(this.rotation);
+    translate(this.enemyX, this.enemyY);
+    rotate(this.enemyRotation);
 
-    //vision cone
+    // vision cone
     fill(255, 255, 120);
     strokeWeight(0);
     beginShape();
@@ -34,17 +34,17 @@ class Enemy {
     vertex(10, -5);
     endShape();
 
-    //enemy
+    // enemy
     strokeWeight(2);
     fill(255, 0, 0);
 
-    //backpack
+    // backpack
     rect(-11, 5.5, 22, 9, 3);
 
-    //body
+    // body
     rect(-15, -7.5, 30, 15, 10);
 
-    //visor
+    // visor
     fill(0, 190, 255);
     rect(-10, -11, 20, 10, 15);
 
@@ -52,14 +52,14 @@ class Enemy {
   }
 }
 
-let Enemy1 = new Enemy(100, 100, 0);
-let Enemy2 = new Enemy(200, 200, 3);
+let enemy1 = new Enemy(100, 100, 0);
+let enemy2 = new Enemy(200, 200, 3);
 
 function draw() {
   background(255, 155, 200);
-  Enemy1.draw();
-  Enemy1.update();
+  enemy1.display();
+  enemy1.update();
 
-  Enemy2.draw();
-  Enemy2.update();
+  enemy2.display();
+  enemy2.update();
 }
