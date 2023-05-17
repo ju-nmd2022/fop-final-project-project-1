@@ -1,4 +1,4 @@
-export default class keyCard {
+export default class KeyCard {
   constructor(x, y) {
     this.x = x;
     this.y = y;
@@ -15,13 +15,12 @@ export default class keyCard {
     // update the position of your particle
   }
 
-  draw() {
-    // draw the particle
+  display() {
+    // draw the keyCard
     push();
     strokeWeight(2);
     stroke(0, 0, 0);
     fill(30, 30, 30);
-    scale(2);
     rect(this.x - 5, this.y + 1, 55, 37.5, 5);
     //card color
     push();
@@ -59,6 +58,7 @@ export default class keyCard {
     pop();
   }
 }
-function draw() {
-  let particle = new keyCard(59, 78);
-}
+
+let keyCardInstanceFirst = new KeyCard(30, 730);
+let keyCardInstanceSecond = new KeyCard(100, 730);
+let keyCardInstanceThird = new KeyCard(170, 730);
