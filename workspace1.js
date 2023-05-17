@@ -3,7 +3,7 @@
 //   background(255, 255, 255);
 // }
 
-import Enemy from "./enemyclass";
+import Enemy from "./objects/enemyclass";
 
 let enemyX = 200;
 let enemyY = 200;

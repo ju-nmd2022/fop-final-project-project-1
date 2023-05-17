@@ -1,6 +1,6 @@
 import Wall from "./wallclass";
 import Player from "./playerclass";
-import Enemy from "./enemyclass";
+import Enemy from "./objects/enemyclass";
 
 function draw() {
   //W key
