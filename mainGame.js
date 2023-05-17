@@ -2,6 +2,7 @@ import Wall from "./objects/wallclass";
 import Player from "./objects/playerclass";
 import Enemy from "./objects/enemyclass";
 import Interface from "./objects/interface";
+import KeyCard from "./objects/keyCard";
 
 function draw() {
   //W key
@@ -35,4 +36,23 @@ function draw() {
   Walltwo.display();
 
   interfaceInstance.display();
+
+  // Define an array to store the boolean values for each key card
+  const keyCardBooleans = [true, true, false]; // Set the initial values to true
+
+  // Define an array to store the key card instances
+  const keyCards = [
+    keyCardInstanceFirst,
+    keyCardInstanceSecond,
+    keyCardInstanceThird,
+  ];
+
+  // Loop through the key card instances
+  for (let i = 0; i < keyCards.length; i++) {
+    // Check the corresponding boolean value for the current key card
+    if (keyCardBooleans[i]) {
+      // If the boolean value is true, display the key card
+      keyCards[i].display();
+    }
+  }
 }

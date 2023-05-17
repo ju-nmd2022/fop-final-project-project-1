@@ -57,7 +57,8 @@ export default class Interface {
       screw.display();
     }
 
-    //shadow
+    //shadows
+    //achivements
     push();
     noStroke();
     fill(55, 55, 55);
@@ -68,6 +69,7 @@ export default class Interface {
     //third achivement
     ellipse(737.5 + 5, 750, 50);
 
+    //keycard
     fill(55, 55, 55);
     //first keycard
     rect(25, 731, 55, 37.5, 5);
