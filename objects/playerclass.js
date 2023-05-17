@@ -50,23 +50,6 @@ export default class Player {
 let player = new Player(50, 100, 0);
 
 function draw() {
-  //W key
-  if (keyIsDown(87)) {
-    player.setSpeed(3);
-    //S key
-  } else if (keyIsDown(83)) {
-    player.setSpeed(-3);
-  } else {
-    player.setSpeed(0);
-  }
-  //A key
-  if (keyIsDown(65)) {
-    player.rotateLeft();
-    //D key
-  } else if (keyIsDown(68)) {
-    player.rotateRight();
-  }
-
   player.display();
   player.move();
 }
