@@ -45,6 +45,13 @@ export default class Player {
   rotateRight() {
     this.playerRotation += 0.05;
   }
+  getX() {
+    return this.playerX;
+  }
+
+  getY() {
+    return this.playerY;
+  }
 }
 
 let player = new Player(50, 100, 0);
