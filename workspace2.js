@@ -2,7 +2,7 @@
 // function setup() {
 //   loadFont("assets/DS_DIGI.TTF", drawText);
 // }
-background(255, 205, 255);
+background(255, 205, 115);
 //interface
 strokeWeight(3);
 //interface background
@@ -32,7 +32,8 @@ push();
 fill(0, 0, 0);
 textFont("DS-Digital");
 textSize(40);
-text("32:22", 355, 762.5);
+textAlign(CENTER);
+text(0 + 2 + ":" + 0 + 1, 400, 762.5);
 pop();
 
 //right rectangle
@@ -110,7 +111,7 @@ let keyCardX = 0;
 let keyCardY = 0;
 
 function keyCard(keyCardX, keyCardY) {
-  strokeWeight(0.75);
+  strokeWeight(2);
   stroke(0, 0, 0);
   fill(30, 30, 30);
   scale(2);
@@ -149,4 +150,10 @@ function keyCard(keyCardX, keyCardY) {
   fill(0, 150, 200);
   ellipse(keyCardX + 8, keyCardY + 20, 10 - 3, 7 - 3);
 }
-keyCard(100, 100);
+keyCard(40, 40);
+keyCard(100, 730);
+keyCard(170, 730);
+
+//coin
+
+//mur
