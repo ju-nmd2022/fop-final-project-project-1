@@ -71,11 +71,6 @@ screw(565, 775, 2, 10);
 screw(790, 725, 2, 10);
 screw(790, 775, 2, 10);
 
-let achivementElement = [
-  "firstAchivement",
-  "secondAchivement",
-  "thirdAchivement",
-];
 function achivementShadow() {
   noStroke();
   fill(55, 55, 55);
@@ -88,7 +83,6 @@ function achivementShadow() {
 }
 achivementShadow();
 
-let keyCardElement = ["firstKeyCard", "secondKeyCard", "thirdKeyCard"];
 function keyCardShadow() {
   noStroke();
   fill(55, 55, 55);

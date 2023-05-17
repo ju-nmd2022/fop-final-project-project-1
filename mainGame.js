@@ -1,6 +1,7 @@
-import Wall from "./wallclass";
-import Player from "./playerclass";
+import Wall from "./objects/wallclass";
+import Player from "./objects/playerclass";
 import Enemy from "./objects/enemyclass";
+import Interface from "./objects/interface";
 
 function draw() {
   //W key
@@ -20,7 +21,7 @@ function draw() {
     player.rotateRight();
   }
 
-  background(255, 55, 255);
+  background(15, 61, 15);
   player.display();
   player.move();
 
@@ -32,4 +33,6 @@ function draw() {
 
   Wallone.display();
   Walltwo.display();
+
+  interfaceInstance.display();
 }
