@@ -37,16 +37,15 @@ function draw() {
 
   interfaceInstance.display();
 
+  //KEYCARDS
   // Define an array to store the boolean values for each key card
   const keyCardBooleans = [true, true, false]; // Set the initial values to true
-
   // Define an array to store the key card instances
   const keyCards = [
     keyCardInstanceFirst,
     keyCardInstanceSecond,
     keyCardInstanceThird,
   ];
-
   // Loop through the key card instances
   for (let i = 0; i < keyCards.length; i++) {
     // Check the corresponding boolean value for the current key card
