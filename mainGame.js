@@ -65,8 +65,10 @@ function draw() {
 }
 
 // Create wall instances
-let Wallone = new Wall(200, 0, 10, 500);
-let Walltwo = new Wall(200, 500, 300, 10);
+
+//level 1
+let Wallone = new Wall(0, 60, 150, 10);
+let Walltwo = new Wall(0, 130, 80, 10);
 let Wallthree = new Wall(100, 200, 10, 200);
 
 // Create player instance
