@@ -37,9 +37,6 @@ function draw() {
   enemy2.display();
   enemy2.update();
 
-  enemy3.display();
-  enemy3.update();
-
   Wallone.display();
   Walltwo.display();
 
