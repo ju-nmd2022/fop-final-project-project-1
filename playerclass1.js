@@ -61,11 +61,11 @@ export default class Player {
   }
 
   rotateLeft() {
-    this.playerRotation -= 0.05;
+    this.playerRotation -= 0.08;
   }
 
   rotateRight() {
-    this.playerRotation += 0.05;
+    this.playerRotation += 0.08;
   }
 
   getX() {

@@ -1,8 +1,7 @@
 import Wall from "./wallclass";
 import Player from "./playerclass";
 
-// export default
-class Enemy {
+export default class Enemy {
   constructor(enemyX, enemyY, enemyRotation) {
     this.enemyX = enemyX;
     this.enemyY = enemyY;
@@ -13,7 +12,7 @@ class Enemy {
 
   update() {
     // Check if it's been 3 seconds since the last switch
-    if (millis() - this.lastSwitchTime > 4000) {
+    if (millis() - this.lastSwitchTime > 4500) {
       // Change the rotation speed direction
       this.rotationSpeed *= -1;
       // Update the last switch time to now
@@ -55,15 +54,29 @@ class Enemy {
     pop();
   }
 }
+//level 1 enemies
+let enemy1 = new Enemy(110, 140, 6);
+let enemy2 = new Enemy(150, 400, 3.5);
+let enemy3 = new Enemy(400, 70, 3);
+let enemy4 = new Enemy(520, 490, 3);
 
-let enemy1 = new Enemy(100, 140, 0);
-let enemy2 = new Enemy(150, 200, 3);
-let enemy3 = new Enemy(300, 300, 4);
-
-//level 1
+//level 1 walls
 let Wallone = new Wall(0, 60, 350, 10);
-let Walltwo = new Wall(0, 130, 80, 10);
-let Wallthree = new Wall(170, 130, 100, 10);
+let Walltwo = new Wall(0, 130, 90, 10);
+let Wallthree = new Wall(170, 130, 390, 10);
+let Wallfour = new Wall(80, 140, 10, 230);
+let Wallfive = new Wall(170, 140, 10, 310);
+let Wallsix = new Wall(0, 370, 90, 10);
+let Wallseven = new Wall(100, 450, 460, 10);
+let Walleight = new Wall(0, 380, 10, 300);
+let Wallnine = new Wall(0, 680, 100, 10);
+let Wallten = new Wall(100, 540, 10, 150);
+let Wallelven = new Wall(110, 540, 360, 10);
+let Walltwelve = new Wall(350, 0, 10, 70);
+let Wallthirteen = new Wall(420, 0, 10, 70);
+let Wallfourteen = new Wall(430, 60, 130, 10);
+let Wallfifteen = new Wall(560, 60, 10, 630);
+let Wallsixteen = new Wall(460, 550, 10, 140);
 
 function draw() {
   background(255, 155, 200);
@@ -73,7 +86,26 @@ function draw() {
   enemy2.display();
   enemy2.update();
 
+  enemy3.display();
+  enemy3.update();
+
+  enemy4.display();
+  enemy4.update();
+
   Wallone.display();
   Walltwo.display();
   Wallthree.display();
+  Wallfour.display();
+  Wallfive.display();
+  Wallsix.display();
+  Wallseven.display();
+  Walleight.display();
+  Wallnine.display();
+  Wallten.display();
+  Wallelven.display();
+  Walltwelve.display();
+  Wallthirteen.display();
+  Wallfourteen.display();
+  Wallfifteen.display();
+  Wallsixteen.display();
 }
