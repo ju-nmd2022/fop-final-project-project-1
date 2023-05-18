@@ -54,6 +54,7 @@ export default class Enemy {
 
 let enemy1 = new Enemy(100, 100, 0);
 let enemy2 = new Enemy(150, 200, 3);
+let enemy3 = new Enemy(300, 300, 4);
 
 function draw() {
   // background(255, 155, 200);

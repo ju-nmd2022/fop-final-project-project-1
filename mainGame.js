@@ -4,6 +4,11 @@ import Enemy from "./objects/enemyclass";
 import Interface from "./objects/interface";
 import KeyCard from "./objects/keyCard";
 
+function setup() {
+  createCanvas(800, 800);
+  width = 100;
+}
+
 function draw() {
   //W key
   if (keyIsDown(87)) {
@@ -31,6 +36,9 @@ function draw() {
 
   enemy2.display();
   enemy2.update();
+
+  enemy3.display();
+  enemy3.update();
 
   Wallone.display();
   Walltwo.display();
