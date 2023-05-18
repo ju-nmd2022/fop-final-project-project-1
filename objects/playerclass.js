@@ -6,7 +6,6 @@ export default class Player {
     this.playerSpeed = 0;
   }
 
-  // drawing of the player
   display() {
     push();
     translate(this.playerX, this.playerY);
@@ -29,9 +28,32 @@ export default class Player {
     pop();
     pop();
   }
-  move() {
-    this.playerX += Math.cos(this.playerRotation) * this.playerSpeed;
-    this.playerY += Math.sin(this.playerRotation) * this.playerSpeed;
+
+  move(walls) {
+    const nextX =
+      this.playerX + Math.cos(this.playerRotation) * this.playerSpeed;
+    const nextY =
+      this.playerY + Math.sin(this.playerRotation) * this.playerSpeed;
+
+    // Check for collision with each wall
+    for (let i = 0; i < walls.length; i++) {
+      const wall = walls[i];
+      const wallBoundingBox = wall.getBoundingBox();
+
+      if (
+        nextX > wallBoundingBox.x &&
+        nextX < wallBoundingBox.x + wallBoundingBox.width &&
+        nextY > wallBoundingBox.y &&
+        nextY < wallBoundingBox.y + wallBoundingBox.height
+      ) {
+        // If collision detected, stop movement
+        return;
+      }
+    }
+
+    // Update player position
+    this.playerX = nextX;
+    this.playerY = nextY;
   }
 
   setSpeed(speed) {
@@ -45,18 +67,13 @@ export default class Player {
   rotateRight() {
     this.playerRotation += 0.05;
   }
+
   getX() {
     return this.playerX;
   }
 
+  // Get the current Y position of the player
   getY() {
     return this.playerY;
   }
-}
-
-let player = new Player(50, 100, 0);
-
-function draw() {
-  player.display();
-  player.move();
 }

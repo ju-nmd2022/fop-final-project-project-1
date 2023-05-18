@@ -28,17 +28,20 @@ function draw() {
   }
 
   background(15, 61, 15);
+  // Display and move the player
   player.display();
-  player.move();
+  player.move([Wallone, Walltwo, Wallthree]);
+
+  // Display walls
+  Wallone.display();
+  Walltwo.display();
+  Wallthree.display();
 
   enemy1.display();
   enemy1.update();
 
   enemy2.display();
   enemy2.update();
-
-  Wallone.display();
-  Walltwo.display();
 
   interfaceInstance.display();
 
@@ -60,3 +63,11 @@ function draw() {
     }
   }
 }
+
+// Create wall instances
+let Wallone = new Wall(200, 0, 10, 500);
+let Walltwo = new Wall(200, 500, 300, 10);
+let Wallthree = new Wall(100, 200, 10, 200);
+
+// Create player instance
+let player = new Player(50, 100, 0);

@@ -35,16 +35,18 @@ function draw() {
 
   // Display and move the player
   player.display();
-  player.move([Wallone, Walltwo]);
+  player.move([Wallone, Walltwo, Wallthree]);
 
   // Display walls
   Wallone.display();
   Walltwo.display();
+  Wallthree.display();
 }
 
 // Create wall instances
 let Wallone = new Wall(200, 0, 10, 500);
 let Walltwo = new Wall(200, 500, 300, 10);
+let Wallthree = new Wall(100, 200, 10, 200);
 
 // Create player instance
 let player = new Player(50, 100, 0);
