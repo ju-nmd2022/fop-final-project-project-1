@@ -1,7 +1,7 @@
 import Wall from "./wallclass";
 import Player from "./playerclass";
 
-export default class Enemy {
+class Enemy {
   constructor(enemyX, enemyY, enemyRotation) {
     this.enemyX = enemyX;
     this.enemyY = enemyY;
@@ -78,34 +78,112 @@ let Wallfourteen = new Wall(430, 60, 130, 10);
 let Wallfifteen = new Wall(560, 60, 10, 630);
 let Wallsixteen = new Wall(460, 550, 10, 140);
 
+// level 2
+let enemy5 = new Enemy(165, 360, 0.1);
+let enemy6 = new Enemy(260, 650, 5.5);
+let enemy7 = new Enemy(240, 185, 2);
+let enemy8 = new Enemy(560, 210, 3.5);
+let enemy9 = new Enemy(590, 500, 3.2);
+
+let Wall17 = new Wall(30, 0, 10, 250);
+let Wall18 = new Wall(110, 0, 10, 150);
+let Wall19 = new Wall(30, 250, 120, 10);
+let Wall20 = new Wall(110, 150, 400, 10);
+let Wall21 = new Wall(150, 250, 10, 40);
+let Wall22 = new Wall(0, 290, 160, 10);
+let Wall23 = new Wall(0, 300, 10, 390);
+let Wall24 = new Wall(0, 690, 80, 10);
+let Wall25 = new Wall(80, 390, 10, 310);
+let Wall26 = new Wall(80, 380, 80, 10);
+let Wall27 = new Wall(150, 390, 10, 290);
+let Wall28 = new Wall(160, 670, 90, 10);
+let Wall29 = new Wall(250, 670, 10, 30);
+let Wall30 = new Wall(330, 670, 10, 30);
+let Wall31 = new Wall(230, 250, 10, 350);
+let Wall32 = new Wall(240, 250, 280, 10);
+let Wall33 = new Wall(510, 60, 10, 100);
+let Wall34 = new Wall(510, 50, 290, 10);
+let Wall35 = new Wall(790, 60, 10, 400);
+let Wall36 = new Wall(700, 460, 100, 10);
+let Wall37 = new Wall(700, 160, 10, 300);
+let Wall38 = new Wall(580, 150, 130, 10);
+let Wall39 = new Wall(580, 160, 10, 300);
+let Wall40 = new Wall(240, 590, 280, 10);
+let Wall41 = new Wall(510, 260, 10, 330);
+let Wall42 = new Wall(340, 670, 300, 10);
+let Wall43 = new Wall(630, 460, 10, 210);
+let Wall44 = new Wall(580, 460, 50, 10);
+
 function draw() {
-  background(255, 155, 200);
-  enemy1.display();
-  enemy1.update();
+  background(122, 105, 105);
+  //level 1
+  // enemy1.display();
+  // enemy1.update();
 
-  enemy2.display();
-  enemy2.update();
+  // enemy2.display();
+  // enemy2.update();
 
-  enemy3.display();
-  enemy3.update();
+  // enemy3.display();
+  // enemy3.update();
 
-  enemy4.display();
-  enemy4.update();
+  // enemy4.display();
+  // enemy4.update();
 
-  Wallone.display();
-  Walltwo.display();
-  Wallthree.display();
-  Wallfour.display();
-  Wallfive.display();
-  Wallsix.display();
-  Wallseven.display();
-  Walleight.display();
-  Wallnine.display();
-  Wallten.display();
-  Wallelven.display();
-  Walltwelve.display();
-  Wallthirteen.display();
-  Wallfourteen.display();
-  Wallfifteen.display();
-  Wallsixteen.display();
+  // Wallone.display();
+  // Walltwo.display();
+  // Wallthree.display();
+  // Wallfour.display();
+  // Wallfive.display();
+  // Wallsix.display();
+  // Wallseven.display();
+  // Walleight.display();
+  // Wallnine.display();
+  // Wallten.display();
+  // Wallelven.display();
+  // Walltwelve.display();
+  // Wallthirteen.display();
+  // Wallfourteen.display();
+  // Wallfifteen.display();
+  // Wallsixteen.display();
+
+  //level 2
+  enemy5.display();
+  enemy5.update();
+  enemy6.display();
+  enemy6.update();
+  enemy7.display();
+  enemy7.update();
+  enemy8.display();
+  enemy8.update();
+  enemy9.display();
+  enemy9.update();
+
+  Wall17.display();
+  Wall18.display();
+  Wall19.display();
+  Wall20.display();
+  Wall21.display();
+  Wall22.display();
+  Wall23.display();
+  Wall24.display();
+  Wall25.display();
+  Wall26.display();
+  Wall27.display();
+  Wall28.display();
+  Wall29.display();
+  Wall30.display();
+  Wall31.display();
+  Wall32.display();
+  Wall33.display();
+  Wall34.display();
+  Wall35.display();
+  Wall36.display();
+  Wall37.display();
+  Wall38.display();
+  Wall39.display();
+  Wall40.display();
+  Wall41.display();
+  Wall42.display();
+  Wall43.display();
+  Wall44.display();
 }
