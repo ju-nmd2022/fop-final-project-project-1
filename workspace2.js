@@ -1,5 +1,7 @@
 import Wall from "./wallclass1";
 import Player from "./playerclass1";
+import Interface from "./objects/interface";
+import KeyCard from "./objects/keyCard";
 
 function setup() {
   createCanvas(800, 800);
@@ -71,6 +73,26 @@ function draw() {
   Wallfourteen.display();
   Wallfifteen.display();
   Wallsixteen.display();
+
+  interfaceInstance.display();
+
+  //KEYCARDS
+  // Define an array to store the boolean values for each key card
+  const keyCardBooleans = [true, true, false]; // Set the initial values to true
+  // Define an array to store the key card instances
+  const keyCards = [
+    keyCardInstanceFirst,
+    keyCardInstanceSecond,
+    keyCardInstanceThird,
+  ];
+  // Loop through the key card instances
+  for (let i = 0; i < keyCards.length; i++) {
+    // Check the corresponding boolean value for the current key card
+    if (keyCardBooleans[i]) {
+      // If the boolean value is true, display the key card
+      keyCards[i].display();
+    }
+  }
 }
 
 // Create wall instances
