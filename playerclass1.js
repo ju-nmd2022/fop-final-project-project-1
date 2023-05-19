@@ -41,10 +41,10 @@ export default class Player {
       const wallBoundingBox = wall.getBoundingBox();
 
       if (
-        nextX + 10 > wallBoundingBox.x &&
-        nextX - 10 < wallBoundingBox.x + wallBoundingBox.width &&
-        nextY + 10 > wallBoundingBox.y &&
-        nextY - 10 < wallBoundingBox.y + wallBoundingBox.height
+        nextX + 14 > wallBoundingBox.x &&
+        nextX - 12.5 < wallBoundingBox.x + wallBoundingBox.width &&
+        nextY + 14 > wallBoundingBox.y &&
+        nextY - 12.5 < wallBoundingBox.y + wallBoundingBox.height
       ) {
         // If collision detected, stop movement
         return;
