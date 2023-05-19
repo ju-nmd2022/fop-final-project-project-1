@@ -8,7 +8,7 @@ export default class Wall {
 
   // Display the wall on the canvas
   display() {
-    fill(255, 255, 255);
+    fill(239, 242, 239);
     rect(this.wallX, this.wallY, this.width, this.height);
   }
 

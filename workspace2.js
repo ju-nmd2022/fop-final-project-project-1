@@ -31,7 +31,7 @@ function draw() {
   }
 
   // Clear the canvas and set background color
-  background(15, 61, 15);
+  background(135, 142, 136);
 
   // Display and move the player
   player.display();
