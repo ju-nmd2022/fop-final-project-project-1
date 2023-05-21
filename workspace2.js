@@ -2,10 +2,10 @@ import Wall from "./wallclass1";
 import Player from "./playerclass1";
 import Interface from "./objects/interface";
 import KeyCard from "./objects/keyCard";
+import Enemy from "./objects/enemyclass";
 
 function setup() {
   createCanvas(800, 800);
-  width = 100;
 }
 
 function draw() {
@@ -76,6 +76,15 @@ function draw() {
 
   interfaceInstance.display();
 
+  enemy1.display();
+  enemy1.update();
+  enemy2.display();
+  enemy2.update();
+  enemy3.display();
+  enemy3.update();
+  enemy4.display();
+  enemy4.update();
+
   //KEYCARDS
   // Define an array to store the boolean values for each key card
   const keyCardBooleans = [true, true, false]; // Set the initial values to true
@@ -114,3 +123,8 @@ let Wallfifteen = new Wall(560, 60, 10, 630);
 let Wallsixteen = new Wall(460, 550, 10, 140);
 // Create player instance
 let player = new Player(50, 100, 0);
+
+let enemy1 = new Enemy(110, 140, 6);
+let enemy2 = new Enemy(150, 400, 3.5);
+let enemy3 = new Enemy(400, 70, 3);
+let enemy4 = new Enemy(520, 490, 3);
