@@ -1,20 +1,33 @@
 export default class Player {
-  constructor(playerX, playerY, playerRotation) {
+  constructor(playerX, playerY, playerRotation, playerSpeed) {
     this.playerX = playerX;
     this.playerY = playerY;
     this.playerRotation = playerRotation;
-    this.playerSpeed = 0;
+    this.playerSpeed = playerSpeed;
   }
 
   display() {
     push();
     translate(this.playerX, this.playerY);
-    rotate(this.playerRotation);
-    rotate(1.56);
-    push();
+    rotate(PI / 2); // Adjust initial rotation
 
     strokeWeight(2);
     fill(255, 255, 0);
+
+    // Adjust rotation for sprite orientation based on movement angle
+    if (this.playerRotation === 0) {
+      // Right
+      // No additional rotation needed
+    } else if (this.playerRotation === PI) {
+      // Left
+      rotate(PI);
+    } else if (this.playerRotation === PI / 2) {
+      // Down
+      rotate(PI / 2);
+    } else if (this.playerRotation === -PI / 2) {
+      // Up
+      rotate(-PI / 2);
+    }
 
     // backpack
     rect(-11, 5.5, 22, 9, 3);
@@ -25,15 +38,13 @@ export default class Player {
     // visor
     fill(0, 190, 255);
     rect(-10, -11, 20, 10, 15);
-    pop();
+
     pop();
   }
 
-  move(walls) {
-    const nextX =
-      this.playerX + Math.cos(this.playerRotation) * this.playerSpeed;
-    const nextY =
-      this.playerY + Math.sin(this.playerRotation) * this.playerSpeed;
+  move(walls, dx, dy) {
+    const nextX = this.playerX + dx;
+    const nextY = this.playerY + dy;
 
     // Check for collision with each wall
     for (let i = 0; i < walls.length; i++) {
