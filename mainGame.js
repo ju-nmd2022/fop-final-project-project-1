@@ -7,15 +7,15 @@ import KeyCard from "./objects/keyCard";
 function setup() {
   createCanvas(800, 800);
 }
-const playerSpeed = 5;
+const playerSpeed = 4;
 
 function draw() {
   background(15, 61, 15);
 
-  let dx = 0; // Movement in the x direction
-  let dy = 0; // Movement in the y direction
-
   // Check for key inputs and set the movement direction
+  //dx = direction x and dy= direction y
+  let dx = 0;
+  let dy = 0;
   if (keyIsDown(68)) {
     // 'd' key
     dx = playerSpeed;
@@ -37,7 +37,6 @@ function draw() {
       Walltwo,
       Wallthree,
       Wallfour,
-      Wallfour,
       Wallfive,
       Wallsix,
       Wallseven,
@@ -47,6 +46,7 @@ function draw() {
       Wallelven,
       Walltwelve,
       Wallthirteen,
+      Wallfourteen,
       Wallfifteen,
       Wallsixteen,
     ],
@@ -54,7 +54,13 @@ function draw() {
     dy
   );
 
-  // Draw the player
+  // Display the player
+  player.display();
+
+  // Update the player's position and rotation
+  player.updateRotation(dx, dy);
+
+  // Display the player
   player.display();
   // Display walls
 
@@ -130,7 +136,7 @@ let Wallfifteen = new Wall(560, 60, 10, 630);
 let Wallsixteen = new Wall(460, 550, 10, 140);
 
 // Create player instance
-let player = new Player(50, 100, 0, 0);
+let player = new Player(50, 100, 0, playerSpeed);
 
 let enemy1 = new Enemy(110, 140, 6);
 let enemy2 = new Enemy(150, 400, 3.5);

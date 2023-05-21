@@ -3,31 +3,15 @@ export default class Player {
     this.playerX = playerX;
     this.playerY = playerY;
     this.playerRotation = playerRotation;
-    this.playerSpeed = playerSpeed;
   }
 
   display() {
     push();
     translate(this.playerX, this.playerY);
-    rotate(PI / 2); // Adjust initial rotation
+    rotate(this.playerRotation + HALF_PI); // Adjust rotation
 
     strokeWeight(2);
     fill(255, 255, 0);
-
-    // Adjust rotation for sprite orientation based on movement angle
-    if (this.playerRotation === 0) {
-      // Right
-      // No additional rotation needed
-    } else if (this.playerRotation === PI) {
-      // Left
-      rotate(PI);
-    } else if (this.playerRotation === PI / 2) {
-      // Down
-      rotate(PI / 2);
-    } else if (this.playerRotation === -PI / 2) {
-      // Up
-      rotate(-PI / 2);
-    }
 
     // backpack
     rect(-11, 5.5, 22, 9, 3);
@@ -67,24 +51,19 @@ export default class Player {
     this.playerY = nextY;
   }
 
-  setSpeed(speed) {
-    this.playerSpeed = speed;
-  }
-
-  rotateLeft() {
-    this.playerRotation -= 0.05;
-  }
-
-  rotateRight() {
-    this.playerRotation += 0.05;
-  }
-
-  getX() {
-    return this.playerX;
-  }
-
-  // Get the current Y position of the player
-  getY() {
-    return this.playerY;
+  updateRotation(dx, dy) {
+    if (dx > 0) {
+      // Moving right
+      this.playerRotation = 0;
+    } else if (dx < 0) {
+      // Moving left
+      this.playerRotation = PI;
+    } else if (dy > 0) {
+      // Moving down
+      this.playerRotation = HALF_PI;
+    } else if (dy < 0) {
+      // Moving up
+      this.playerRotation = -HALF_PI;
+    }
   }
 }
