@@ -1,4 +1,4 @@
-/* export default class StartLevel {
+/* export default class StartScreen {
   constructor(x, y) {
     this.x = x;
     this.y = y;

@@ -1,11 +1,20 @@
+//objects imported
 import Wall from "./objects/wallclass";
 import Player from "./objects/playerclass";
 import Enemy from "./objects/enemyclass";
 import Interface from "./objects/interface";
 import KeyCard from "./objects/keyCard";
-import FirstLevel from "./objects/levels/firstLevel";
 
-let state = "levelOne";
+//levels imported
+import FirstLevel from "./objects/levels/firstLevel";
+import SecondLevel from "./objects/levels/secondLevel";
+import ThirdLevel from "./objects/levels/thirdLevel";
+import FinalLevel from "./objects/levels/finalLevel";
+function setup() {
+  createCanvas(800, 800);
+}
+
+let state = "levelFinal";
 const playerSpeed = 4;
 
 const keyCardBooleans = [true, true, false]; // Set the initial values to true
@@ -15,10 +24,6 @@ const keyCards = [
   keyCardInstanceSecond,
   keyCardInstanceThird,
 ];
-
-function setup() {
-  createCanvas(800, 800);
-}
 
 function draw() {
   states();
@@ -39,128 +44,15 @@ function states() {
     levelOne.display();
     levelOne.move();
   } else if (state === "levelTwo") {
-    levelTwo();
+    levelTwo.display();
+    levelTwo.move();
   } else if (state === "levelThree") {
-    levelThree();
-  } else if (state === "winRoom") {
-    winRoom();
+    levelThree.display();
+    levelThree.move();
+  } else if (state === "levelFinal") {
+    levelFinal.display();
+    levelFinal.move();
   }
-}
-function levelTwo() {
-  //level 2
-  background(135, 142, 136);
-
-  player2.display();
-
-  interfaceInstance.display();
-  enemy5.display();
-  enemy5.update();
-  enemy6.display();
-  enemy6.update();
-  enemy7.display();
-  enemy7.update();
-  enemy8.display();
-  enemy8.update();
-  enemy9.display();
-  enemy9.update();
-
-  Wall17.display();
-  Wall18.display();
-  Wall19.display();
-  Wall20.display();
-  Wall21.display();
-  Wall22.display();
-  Wall23.display();
-  Wall24.display();
-  Wall25.display();
-  Wall26.display();
-  Wall27.display();
-  Wall28.display();
-  Wall29.display();
-  Wall30.display();
-  Wall31.display();
-  Wall32.display();
-  Wall33.display();
-  Wall34.display();
-  Wall35.display();
-  Wall36.display();
-  Wall37.display();
-  Wall38.display();
-  Wall39.display();
-  Wall40.display();
-  Wall41.display();
-  Wall42.display();
-  Wall43.display();
-  Wall44.display();
-}
-function levelThree() {
-  //level 3
-  background(15, 61, 15);
-  interfaceInstance.display();
-  enemy10.display();
-  enemy10.update();
-  enemy11.display();
-  enemy11.update();
-  enemy12.display();
-  enemy12.update();
-  enemy13.display();
-  enemy13.update();
-  enemy14.display();
-  enemy14.update();
-  enemy15.display();
-  enemy15.update();
-  enemy16.display();
-  enemy16.update();
-  enemy17.display();
-  enemy17.update();
-  enemy18.display();
-  enemy18.update();
-
-  Wall45.display();
-  Wall46.display();
-  Wall47.display();
-  Wall48.display();
-  Wall49.display();
-  Wall50.display();
-  Wall51.display();
-  Wall52.display();
-  Wall53.display();
-  Wall54.display();
-  Wall55.display();
-  Wall56.display();
-  Wall57.display();
-  Wall58.display();
-  Wall59.display();
-  Wall60.display();
-  Wall61.display();
-  Wall62.display();
-  Wall63.display();
-  Wall64.display();
-  Wall65.display();
-  Wall66.display();
-  Wall67.display();
-  Wall68.display();
-  Wall69.display();
-  Wall70.display();
-  Wall71.display();
-  Wall72.display();
-  Wall73.display();
-  Wall74.display();
-  Wall75.display();
-  Wall76.display();
-}
-function winRoom() {
-  background(122, 105, 105);
-  interfaceInstance.display();
-
-  // win room level 4
-  Wall77.display();
-  Wall78.display();
-  Wall79.display();
-  Wall80.display();
-  Wall81.display();
-  Wall82.display();
-  Wall83.display();
 }
 
 // Create player
