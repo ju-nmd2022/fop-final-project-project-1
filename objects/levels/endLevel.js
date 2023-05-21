@@ -1,4 +1,4 @@
-export default class FirstLevel {
+export default class EndLevel {
   constructor(x, y) {
     this.x = x;
     this.y = y;
