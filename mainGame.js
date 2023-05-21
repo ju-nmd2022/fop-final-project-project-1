@@ -3,123 +3,45 @@ import Player from "./objects/playerclass";
 import Enemy from "./objects/enemyclass";
 import Interface from "./objects/interface";
 import KeyCard from "./objects/keyCard";
-
-import StartLevel from "./objects/levels/startLevel";
 import FirstLevel from "./objects/levels/firstLevel";
-import SecondLevel from "./objects/levels/secondLevel";
-import ThirdLevel from "./objects/levels/thirdLevel";
-import EndLevel from "./objects/levels/endLevel";
 
-let state = "winRoom";
+let state = "levelOne";
 const playerSpeed = 4;
 
 function setup() {
   createCanvas(800, 800);
 }
 
-function levelOne() {
-  background(15, 61, 15);
+function gameControl() {}
 
-  // Check for key inputs and set the movement direction
-  //dx = direction x and dy= direction y
-  let dx = 0;
-  let dy = 0;
-  if (keyIsDown(68)) {
-    // 'd' key
-    dx = playerSpeed;
-  } else if (keyIsDown(65)) {
-    // 'a' key
-    dx = -playerSpeed;
-  } else if (keyIsDown(87)) {
-    // 'w' key
-    dy = -playerSpeed;
-  } else if (keyIsDown(83)) {
-    // 's' key
-    dy = playerSpeed;
+function draw() {
+  if (state === "levelOne") {
+    levelOne.display();
+    levelOne.move();
+  } else if (state === "levelTwo") {
+    levelTwo();
+  } else if (state === "levelThree") {
+    levelThree();
+  } else if (state === "winRoom") {
+    winRoom();
   }
+}
 
-  // Update the player's position
-  player.move(
-    [
-      Wallone,
-      Walltwo,
-      Wallthree,
-      Wallfour,
-      Wallfive,
-      Wallsix,
-      Wallseven,
-      Walleight,
-      Wallnine,
-      Wallten,
-      Wallelven,
-      Walltwelve,
-      Wallthirteen,
-      Wallfourteen,
-      Wallfifteen,
-      Wallsixteen,
-    ],
-    dx,
-    dy
-  );
-  background(135, 142, 136);
-  // Display the player
-  player.display();
-
-  // Update the player's position and rotation
-  player.updateRotation(dx, dy);
-
-  // Display the player
-  player.display();
-  // Display walls
-
-  //level 1
-  Wallone.display();
-  Walltwo.display();
-  Wallthree.display();
-  Wallfour.display();
-  Wallfive.display();
-  Wallsix.display();
-  Wallseven.display();
-  Walleight.display();
-  Wallnine.display();
-  Wallten.display();
-  Wallelven.display();
-  Walltwelve.display();
-  Wallthirteen.display();
-  Wallfourteen.display();
-  Wallfifteen.display();
-  Wallsixteen.display();
-
-  enemy1.display();
-  enemy1.update();
-
-  enemy2.display();
-  enemy2.update();
-
-  enemy3.display();
-  enemy3.update();
-
-  enemy4.display();
-  enemy4.update();
-
-  interfaceInstance.display();
-
-  //KEYCARDS
-  // Define an array to store the boolean values for each key card
-  const keyCardBooleans = [true, true, false]; // Set the initial values to true
-  // Define an array to store the key card instances
-  const keyCards = [
-    keyCardInstanceFirst,
-    keyCardInstanceSecond,
-    keyCardInstanceThird,
-  ];
-  // Loop through the key card instances
-  for (let i = 0; i < keyCards.length; i++) {
-    // Check the corresponding boolean value for the current key card
-    if (keyCardBooleans[i]) {
-      // If the boolean value is true, display the key card
-      keyCards[i].display();
-    }
+//KEYCARDS
+// Define an array to store the boolean values for each key card
+const keyCardBooleans = [true, true, false]; // Set the initial values to true
+// Define an array to store the key card instances
+const keyCards = [
+  keyCardInstanceFirst,
+  keyCardInstanceSecond,
+  keyCardInstanceThird,
+];
+// Loop through the key card instances
+for (let i = 0; i < keyCards.length; i++) {
+  // Check the corresponding boolean value for the current key card
+  if (keyCardBooleans[i]) {
+    // If the boolean value is true, display the key card
+    keyCards[i].display();
   }
 }
 function levelTwo() {
@@ -237,17 +159,6 @@ function winRoom() {
   Wall81.display();
   Wall82.display();
   Wall83.display();
-}
-function draw() {
-  if (state === "levelOne") {
-    levelOne();
-  } else if (state === "levelTwo") {
-    levelTwo();
-  } else if (state === "levelThree") {
-    levelThree();
-  } else if (state === "winRoom") {
-    winRoom();
-  }
 }
 
 // Create player
