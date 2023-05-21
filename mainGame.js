@@ -8,13 +8,33 @@ import FirstLevel from "./objects/levels/firstLevel";
 let state = "levelOne";
 const playerSpeed = 4;
 
+const keyCardBooleans = [true, true, false]; // Set the initial values to true
+// Define an array to store the key card instances
+const keyCards = [
+  keyCardInstanceFirst,
+  keyCardInstanceSecond,
+  keyCardInstanceThird,
+];
+
 function setup() {
   createCanvas(800, 800);
 }
 
-function gameControl() {}
-
 function draw() {
+  states();
+  //KEYCARDS
+  // Define an array to store the boolean values for each key card
+  // Loop through the key card instances
+  for (let i = 0; i < keyCards.length; i++) {
+    // Check the corresponding boolean value for the current key card
+    if (keyCardBooleans[i]) {
+      // If the boolean value is true, display the key card
+      keyCards[i].display();
+    }
+  }
+}
+
+function states() {
   if (state === "levelOne") {
     levelOne.display();
     levelOne.move();
@@ -24,24 +44,6 @@ function draw() {
     levelThree();
   } else if (state === "winRoom") {
     winRoom();
-  }
-}
-
-//KEYCARDS
-// Define an array to store the boolean values for each key card
-const keyCardBooleans = [true, true, false]; // Set the initial values to true
-// Define an array to store the key card instances
-const keyCards = [
-  keyCardInstanceFirst,
-  keyCardInstanceSecond,
-  keyCardInstanceThird,
-];
-// Loop through the key card instances
-for (let i = 0; i < keyCards.length; i++) {
-  // Check the corresponding boolean value for the current key card
-  if (keyCardBooleans[i]) {
-    // If the boolean value is true, display the key card
-    keyCards[i].display();
   }
 }
 function levelTwo() {

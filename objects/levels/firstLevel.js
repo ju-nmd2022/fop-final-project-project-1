@@ -10,6 +10,7 @@ export default class FirstLevel {
 
   display() {
     clear();
+    //WALL
     Wallone.display();
     Walltwo.display();
     Wallthree.display();
@@ -27,6 +28,7 @@ export default class FirstLevel {
     Wallfifteen.display();
     Wallsixteen.display();
 
+    //ENEMIES
     enemy1.display();
     enemy1.update();
 
@@ -39,8 +41,10 @@ export default class FirstLevel {
     enemy4.display();
     enemy4.update();
 
-    interfaceInstance.display();
+    //PLAYER
     player.display();
+
+    interfaceInstance.display();
     // Display walls
   }
 
@@ -93,8 +97,3 @@ export default class FirstLevel {
 }
 
 let levelOne = new FirstLevel();
-
-function draw() {
-  levelOne.display();
-  levelOne.move();
-}
