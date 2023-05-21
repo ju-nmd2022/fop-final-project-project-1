@@ -9,6 +9,7 @@ export default class FinalLevel {
   }
   display() {
     clear();
+    background(10, 100, 10);
     //WALL
     Wall77.display();
     Wall78.display();
