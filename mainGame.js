@@ -4,6 +4,12 @@ import Enemy from "./objects/enemyclass";
 import Interface from "./objects/interface";
 import KeyCard from "./objects/keyCard";
 
+import StartLevel from "./objects/levels/startLevel";
+import FirstLevel from "./objects/levels/firstLevel";
+import SecondLevel from "./objects/levels/secondLevel";
+import ThirdLevel from "./objects/levels/thirdLevel";
+import EndLevel from "./objects/levels/endLevel";
+
 let state = "winRoom";
 const playerSpeed = 4;
 
