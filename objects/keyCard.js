@@ -9,32 +9,38 @@ export default class KeyCard {
     this.playerColorR = 100;
     this.playerColorG = 25;
     this.playerColorB = 105;
+
+    this.displayEnabled = true;
   }
 
   update() {
-    // update the position of your particle
+    // Update the position of your particle
   }
 
   display() {
-    // draw the keyCard
+    if (!this.displayEnabled) {
+      return; // Skip displaying if disabled
+    }
+
+    // Draw the keyCard
     push();
     strokeWeight(2);
     stroke(0, 0, 0);
     fill(30, 30, 30);
     rect(this.x - 5, this.y + 1, 55, 37.5, 5);
-    //card color
+    // Card color
     push();
     noStroke();
     fill(this.keyCardColorR, this.keyCardColorG, this.keyCardColorB);
     rect(this.x + 32, this.y + 1.25, 12, 37);
     pop();
-    //picture on the keycard
-    //frame
+    // Picture on the keycard
+    // Frame
     fill(255, 255, 255);
     strokeWeight(1);
     stroke(0, 0, 0);
     rect(this.x, this.y + 10, 15, 20, 1);
-    //character
+    // Character
     beginShape();
     fill(this.playerColorR, this.playerColorG, this.playerColorB);
     strokeWeight(0.5);
@@ -52,12 +58,17 @@ export default class KeyCard {
     vertex(this.x + 14.75, this.y + 29.75);
     vertex(this.x + 14.75, this.y + 18);
     endShape();
-    //vicer
+    // Vicer
     fill(0, 150, 200);
     ellipse(this.x + 8, this.y + 20, 10 - 3, 7 - 3);
     pop();
   }
+
+  removeDisplay() {
+    this.displayEnabled = false;
+  }
 }
+
 //keycards shown on interface
 let keyCardInstanceFirst = new KeyCard(30, 730);
 let keyCardInstanceSecond = new KeyCard(100, 730);

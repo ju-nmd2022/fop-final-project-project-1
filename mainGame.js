@@ -17,7 +17,7 @@ function setup() {
 let state = "levelOne";
 const playerSpeed = 4;
 
-const keyCardBooleans = [true, true, false]; // Set the initial values to true
+let keyCardBooleans = [false, false, false]; // Set the initial values to true
 // Define an array to store the key card instances
 const keyCards = [
   keyCardInstanceFirst,
@@ -36,6 +36,50 @@ function draw() {
       // If the boolean value is true, display the key card
       keyCards[i].display();
     }
+  }
+  // Check if the player is in levelOne and at the specified position to pick up the key card
+  if (state === "levelOne" && player.playerX < 50 && player.playerY > 660) {
+    keyCardBooleans[0] = true;
+    keyCardlevelOne.removeDisplay();
+  }
+  if (
+    (keyCardInstanceFirst =
+      true &&
+      keyCardBooleans[0] === true &&
+      player.playerX > 470 &&
+      player.playerY > 700)
+  ) {
+    state = "levelTwo";
+  }
+
+  if (player2.playerX > 740 && player2.playerY > 420) {
+    keyCardBooleans[1] = true;
+    keyCardlevelTwo.removeDisplay();
+  }
+  if (
+    (keyCardInstanceSecond =
+      true &&
+      keyCardBooleans[1] === true &&
+      player2.playerX > 260 &&
+      player2.playerX < 330 &&
+      player2.playerY > 700)
+  ) {
+    state = "levelThree";
+  }
+  if (
+    player3.playerX > 120 &&
+    player3.playerX < 140 &&
+    player3.playerY > 530 &&
+    player3.playerY < 550
+  ) {
+    keyCardBooleans[2] = true;
+    keyCardlevelThree.removeDisplay();
+  }
+  if (
+    (keyCardInstanceThird =
+      true && keyCardBooleans[2] === true && player3.playerX > 800)
+  ) {
+    state = "levelFinal";
   }
 }
 
