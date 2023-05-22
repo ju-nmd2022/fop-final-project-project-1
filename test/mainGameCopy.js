@@ -12,28 +12,60 @@ function setup() {
 let state = "levelOne";
 const playerSpeed = 4;
 
+// Create an array to store enemy instances
+let enemies = [];
+
+// Push enemy instances into the array
+let enemy1 = new Enemy(110, 140, 6);
+let enemy2 = new Enemy(150, 400, 3.5);
+let enemy3 = new Enemy(400, 70, 3);
+let enemy4 = new Enemy(520, 490, 3);
+enemies.push(enemy1);
+enemies.push(enemy2);
+enemies.push(enemy3);
+enemies.push(enemy4);
+
+// ...
+
+// Push more enemy instances for other levels if needed
+
 function draw() {
-  states();
-
-  //KEYCARDS
-  // Define an array to store the boolean values for each key card
-  // Loop through the key card instances
-}
-
-function states() {
   if (state === "levelOne") {
     levelOne.display();
-    levelOne.move();
+    levelOne.move(player);
   } else if (state === "levelTwo") {
     levelTwo.display();
-    levelTwo.move();
+    levelTwo.move(player2);
   } else if (state === "levelThree") {
     levelThree.display();
-    levelThree.move();
+    levelThree.move(player);
   } else if (state === "levelFinal") {
     levelFinal.display();
-    levelFinal.move();
+    levelFinal.move(player);
   }
+
+  // Check collision with player and enemies' vision cones
+  // Check collision with player and enemies' vision cones
+  for (let i = 0; i < enemies.length; i++) {
+    let enemy = enemies[i];
+
+    // Update the enemy's rotation and switch direction if needed
+
+    // Calculate the rotated position based on enemy's rotation angle
+    let offsetX = Math.cos(enemy.enemyRotation) * 30; // Adjust the offset based on the desired distance from rotation center
+    let offsetY = Math.sin(enemy.enemyRotation) * 30; // Adjust the offset based on the desired distance from rotation center
+    let enemyX = enemy.enemyX + offsetX;
+    let enemyY = enemy.enemyY + offsetY;
+
+    let distance = dist(player.playerX, player.playerY, enemyX, enemyY);
+
+    if (distance < 30) {
+      console.log("Player detected by enemy " + (i + 1));
+      background(255, 255, 255, 30);
+    }
+  }
+
+  // Rest of your code...
 }
 
 // Create player
@@ -57,11 +89,6 @@ let Wallfifteen = new Wall(560, 60, 10, 80);
 let Wallsixteen = new Wall(460, 550, 10, 150);
 let Wall84 = new Wall(360, 0, 60, 10);
 let Wall85 = new Wall(560, 450, 10, 250);
-
-let enemy1 = new Enemy(110, 140, 6);
-let enemy2 = new Enemy(150, 400, 3.5);
-let enemy3 = new Enemy(400, 70, 3);
-let enemy4 = new Enemy(520, 490, 3);
 
 // level 2
 let player2 = new Player(75, 30, 0, playerSpeed);
