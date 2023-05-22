@@ -14,7 +14,7 @@ function setup() {
   createCanvas(800, 800);
 }
 
-let state = "levelFinal";
+let state = "levelOne";
 const playerSpeed = 4;
 
 const keyCardBooleans = [true, true, false]; // Set the initial values to true
