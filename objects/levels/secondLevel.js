@@ -51,7 +51,9 @@ export default class SecondLevel {
     enemy9.display();
     enemy9.update();
     //PLAYER
-    player.display();
+    player2.display();
+
+    keyCardlevelTwo.display();
 
     interfaceInstance.display();
     // Display walls
@@ -77,7 +79,7 @@ export default class SecondLevel {
     }
 
     // Update the player's position
-    player.move(
+    player2.move(
       [
         Wall17,
         Wall18,
@@ -113,7 +115,7 @@ export default class SecondLevel {
     );
 
     // Update the player's position and rotation
-    player.updateRotation(dx, dy);
+    player2.updateRotation(dx, dy);
   }
 }
 

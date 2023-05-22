@@ -82,6 +82,11 @@ let enemy2 = new Enemy(150, 400, 3.5);
 let enemy3 = new Enemy(400, 70, 3);
 let enemy4 = new Enemy(520, 490, 3);
 
+//keycards the player "picks up" on the map
+let keyCardlevelOne = new KeyCard(30, 630);
+let keyCardlevelTwo = new KeyCard(730, 410);
+let keyCardlevelThree = new KeyCard(117, 520);
+
 // level 2
 let player2 = new Player(75, 30, 0, playerSpeed);
 
@@ -121,6 +126,8 @@ let Wall43 = new Wall(630, 460, 10, 210);
 let Wall44 = new Wall(580, 460, 50, 10);
 
 // level 3
+let player3 = new Player(695, 30, 0, playerSpeed);
+
 let enemy10 = new Enemy(700, 350, 4);
 let enemy11 = new Enemy(710, 665, 4);
 let enemy12 = new Enemy(485, 485, 4);
@@ -128,7 +135,7 @@ let enemy13 = new Enemy(455, 335, 0.5);
 let enemy14 = new Enemy(487, 155, 3);
 let enemy15 = new Enemy(230, 490, 0);
 let enemy16 = new Enemy(265, 190, 4);
-let enemy17 = new Enemy(60, 540, 5.5);
+let enemy17 = new Enemy(55, 540, 5.5);
 let enemy18 = new Enemy(120, 635, 3);
 
 let Wall45 = new Wall(650, 0, 10, 300);
@@ -165,6 +172,8 @@ let Wall75 = new Wall(140, 610, 10, 20);
 let Wall76 = new Wall(140, 630, 70, 10);
 
 //win room (level 4)
+let player4 = new Player(20, 400, 0, playerSpeed);
+
 let Wall77 = new Wall(0, 350, 300, 10);
 let Wall78 = new Wall(0, 430, 300, 10);
 let Wall79 = new Wall(300, 260, 10, 100);

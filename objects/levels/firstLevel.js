@@ -46,6 +46,8 @@ export default class FirstLevel {
     //PLAYER
     player.display();
 
+    keyCardlevelOne.display();
+
     interfaceInstance.display();
     // Display walls
   }

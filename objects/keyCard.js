@@ -58,7 +58,7 @@ export default class KeyCard {
     pop();
   }
 }
-
+//keycards shown on interface
 let keyCardInstanceFirst = new KeyCard(30, 730);
 let keyCardInstanceSecond = new KeyCard(100, 730);
 let keyCardInstanceThird = new KeyCard(170, 730);

@@ -9,7 +9,6 @@ export default class FinalLevel {
   }
   display() {
     clear();
-    background(10, 100, 10);
     //WALL
     Wall77.display();
     Wall78.display();
@@ -22,7 +21,7 @@ export default class FinalLevel {
     //ENEMIES
 
     //PLAYER
-    player.display();
+    player4.display();
 
     interfaceInstance.display();
     // Display walls
@@ -48,14 +47,14 @@ export default class FinalLevel {
     }
 
     // Update the player's position
-    player.move(
+    player4.move(
       [Wall77, Wall78, Wall79, Wall80, Wall81, Wall82, Wall83],
       dx,
       dy
     );
 
     // Update the player's position and rotation
-    player.updateRotation(dx, dy);
+    player4.updateRotation(dx, dy);
   }
 }
 

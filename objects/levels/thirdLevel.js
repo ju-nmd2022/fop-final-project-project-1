@@ -63,7 +63,9 @@ export default class ThirdLevel {
     enemy18.display();
     enemy18.update();
     //PLAYER
-    player.display();
+    player3.display();
+
+    keyCardlevelThree.display();
 
     interfaceInstance.display();
     // Display walls
@@ -89,7 +91,7 @@ export default class ThirdLevel {
     }
 
     // Update the player's position
-    player.move(
+    player3.move(
       [
         Wall45,
         Wall46,
@@ -129,7 +131,7 @@ export default class ThirdLevel {
     );
 
     // Update the player's position and rotation
-    player.updateRotation(dx, dy);
+    player3.updateRotation(dx, dy);
   }
 }
 
