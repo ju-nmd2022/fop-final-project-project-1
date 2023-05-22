@@ -72,8 +72,10 @@ let Wallelven = new Wall(110, 540, 360, 10);
 let Walltwelve = new Wall(350, 0, 10, 70);
 let Wallthirteen = new Wall(420, 0, 10, 70);
 let Wallfourteen = new Wall(430, 60, 130, 10);
-let Wallfifteen = new Wall(560, 60, 10, 630);
-let Wallsixteen = new Wall(460, 550, 10, 140);
+let Wallfifteen = new Wall(560, 60, 10, 80);
+let Wallsixteen = new Wall(460, 550, 10, 150);
+let Wall84 = new Wall(360, 0, 60, 10);
+let Wall85 = new Wall(560, 450, 10, 250);
 
 let enemy1 = new Enemy(110, 140, 6);
 let enemy2 = new Enemy(150, 400, 3.5);

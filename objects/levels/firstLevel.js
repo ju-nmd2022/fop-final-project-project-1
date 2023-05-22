@@ -27,6 +27,8 @@ export default class FirstLevel {
     Wallfourteen.display();
     Wallfifteen.display();
     Wallsixteen.display();
+    Wall84.display();
+    Wall85.display();
 
     //ENEMIES
     enemy1.display();
@@ -86,6 +88,8 @@ export default class FirstLevel {
         Wallfourteen,
         Wallfifteen,
         Wallsixteen,
+        Wall84,
+        Wall85,
       ],
       dx,
       dy
