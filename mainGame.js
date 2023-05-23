@@ -5,6 +5,7 @@ import Enemy from "./objects/enemyclass";
 import Interface from "./objects/interface";
 import KeyCard from "./objects/keyCard";
 import Floor from "./objects/floorClass";
+import AchievementToken from "./objects/achievementToken";
 
 //levels imported
 import FirstLevel from "./objects/levels/firstLevel";
@@ -15,7 +16,7 @@ function setup() {
   createCanvas(800, 800);
 }
 
-let state = "levelFinal";
+let state = "levelOne";
 const playerSpeed = 4;
 
 let keyCardBooleans = [false, false, false]; // Set the initial values to true
@@ -24,6 +25,14 @@ const keyCards = [
   keyCardInstanceFirst,
   keyCardInstanceSecond,
   keyCardInstanceThird,
+];
+
+let tokenBooleans = [false, false, false];
+
+const tokens = [
+  AchievementTokenInstanceFirst,
+  AchievementTokenInstanceSecond,
+  AchievementTokenInstanceThird,
 ];
 
 function draw() {
@@ -36,6 +45,12 @@ function draw() {
     if (keyCardBooleans[i]) {
       // If the boolean value is true, display the key card
       keyCards[i].display();
+    }
+  }
+
+  for (let i = 0; i < tokens.length; i++) {
+    if (tokenBooleans[i]) {
+      tokens[i].display();
     }
   }
   // Check if the player is in levelOne and at the specified position to pick up the key card

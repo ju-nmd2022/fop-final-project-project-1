@@ -80,6 +80,7 @@ export default class ThirdLevel {
     player3.display();
 
     keyCardlevelThree.display();
+    AchievementTokenInstanceThird.display();
 
     interfaceInstance.display();
     // Display walls

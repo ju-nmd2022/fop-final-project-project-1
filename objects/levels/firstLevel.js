@@ -58,6 +58,7 @@ export default class FirstLevel {
     player.display();
 
     keyCardlevelOne.display();
+    AchievementTokenInstanceFirst.display();
 
     interfaceInstance.display();
     // Display walls
