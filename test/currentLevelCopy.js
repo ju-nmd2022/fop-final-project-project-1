@@ -10,6 +10,15 @@ export default class FirstLevel {
 
   display() {
     clear();
+
+    Floor1.display();
+    Floor2.display();
+    Floor3.display();
+    Floor4.display();
+    Floor5.display();
+    Floor6.display();
+    Floor7.display();
+
     //WALL
     Wallone.display();
     Walltwo.display();
@@ -29,6 +38,7 @@ export default class FirstLevel {
     Wallsixteen.display();
     Wall84.display();
     Wall85.display();
+    Wall86.display();
 
     //ENEMIES
     enemy1.display();

@@ -14,6 +14,18 @@ export default class Enemy {
       this.rotationSpeed *= -1;
       // Update the last switch time to now
       this.lastSwitchTime = millis();
+
+      //kasta ray ut en vis längd samtidigt som den roterar
+      //this.enemyRotation
+      //normalisera så man får ut rätt värde
+      //spara hit i varaiable
+      //const hit = ray(rotation, distance);
+      //ray = rotation / distance
+      //ray  - return true/false
+
+      //ray if player hit
+      //console.log wall hit
+      //console.log player hit
     }
     // Update the rotation based on the current speed
     this.enemyRotation += this.rotationSpeed;

@@ -2,6 +2,7 @@
 import Enemy from "./enemyClassCopy";
 import Player from "./playerClassCopy";
 import Wall from "./wallClassCopy";
+import Floor from "./floorClassCopy";
 //levels imported
 import FirstLevel from "./currentLevelCopy";
 
@@ -77,7 +78,7 @@ let Wallthree = new Wall(170, 130, 390, 10);
 let Wallfour = new Wall(80, 140, 10, 230);
 let Wallfive = new Wall(170, 140, 10, 310);
 let Wallsix = new Wall(0, 370, 90, 10);
-let Wallseven = new Wall(100, 450, 460, 10);
+let Wallseven = new Wall(100, 450, 450, 10);
 let Walleight = new Wall(0, 380, 10, 300);
 let Wallnine = new Wall(0, 680, 100, 10);
 let Wallten = new Wall(100, 540, 10, 150);
@@ -86,9 +87,18 @@ let Walltwelve = new Wall(350, 0, 10, 70);
 let Wallthirteen = new Wall(420, 0, 10, 70);
 let Wallfourteen = new Wall(430, 60, 130, 10);
 let Wallfifteen = new Wall(560, 60, 10, 80);
-let Wallsixteen = new Wall(460, 550, 10, 150);
+let Wallsixteen = new Wall(460, 550, 10, 190);
 let Wall84 = new Wall(360, 0, 60, 10);
-let Wall85 = new Wall(560, 450, 10, 250);
+let Wall85 = new Wall(540, 450, 10, 290);
+let Wall86 = new Wall(460, 740, 90, 10);
+
+let Floor1 = new Floor(0, 70, 560, 60);
+let Floor2 = new Floor(360, 10, 60, 60);
+let Floor3 = new Floor(90, 130, 80, 319);
+let Floor4 = new Floor(10, 380, 90, 300);
+let Floor5 = new Floor(100, 460, 450, 80);
+let Floor6 = new Floor(470, 540, 80, 200);
+let Floor7 = new Floor(1410, 140, 130, 70);
 
 // level 2
 let player2 = new Player(75, 30, 0, playerSpeed);
