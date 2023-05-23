@@ -15,7 +15,7 @@ function setup() {
   createCanvas(800, 800);
 }
 
-let state = "levelFinal";
+let state = "levelOne";
 const playerSpeed = 4;
 
 let keyCardBooleans = [false, false, false]; // Set the initial values to true
@@ -39,7 +39,7 @@ function draw() {
     }
   }
   // Check if the player is in levelOne and at the specified position to pick up the key card
-  if (state === "levelOne" && player.playerX < 75 && player.playerY > 640) {
+  if (state === "levelOne" && player.playerX < 75 && player.playerY > 630) {
     keyCardBooleans[0] = true;
     keyCardlevelOne.removeDisplay();
   }
@@ -122,6 +122,7 @@ let Wallsixteen = new Wall(460, 550, 10, 190);
 let Wall84 = new Wall(360, 0, 60, 10);
 let Wall85 = new Wall(540, 450, 10, 290);
 let Wall86 = new Wall(460, 740, 90, 10);
+let Wall87 = new Wall(-5, 60, 10, 80);
 
 let Floor1 = new Floor(0, 70, 560, 60);
 let Floor2 = new Floor(360, 10, 60, 60);
@@ -137,7 +138,7 @@ let enemy3 = new Enemy(400, 70, 3);
 let enemy4 = new Enemy(520, 490, 3);
 
 //keycards the player "picks up" on the map
-let keyCardlevelOne = new KeyCard(30, 630);
+let keyCardlevelOne = new KeyCard(32, 630);
 let keyCardlevelTwo = new KeyCard(722.5, 212.75);
 let keyCardlevelThree = new KeyCard(111, 316);
 
@@ -240,6 +241,7 @@ let Wall73 = new Wall(20, 610, 10, 90);
 let Wall74 = new Wall(30, 610, 110, 10);
 let Wall75 = new Wall(140, 610, 10, 20);
 let Wall76 = new Wall(140, 630, 70, 10);
+let Wall89 = new Wall(650, -5, 90, 10);
 
 let Floor30 = new Floor(660, 0, 70, 690);
 let Floor31 = new Floor(510, 300, 150, 70);

@@ -134,6 +134,7 @@ export default class SecondLevel {
         Wall42,
         Wall43,
         Wall44,
+        Wall90,
       ],
       dx,
       dy
