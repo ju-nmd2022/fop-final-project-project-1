@@ -98,6 +98,25 @@ function draw() {
   ) {
     state = "levelFinal";
   }
+
+  //picking up tokens
+  if (player.playerX > 515 && player.playerY < 117 && player.playerY > 85) {
+    tokenBooleans[0] = true;
+    tokenLevelOne.removeDisplay();
+  }
+  if (
+    player2.playerX > 35 &&
+    player2.playerX < 45 &&
+    player2.playerY > 410 &&
+    player2.playerY < 430
+  ) {
+    tokenBooleans[1] = true;
+    tokenLevelTwo.removeDisplay();
+  }
+  if (player3.playerX < 55 && player3.playerY > 665 && player3.playerY < 678) {
+    tokenBooleans[2] = true;
+    tokenLevelThree.removeDisplay();
+  }
 }
 
 function states() {

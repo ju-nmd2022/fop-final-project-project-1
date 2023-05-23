@@ -3,9 +3,15 @@ export default class AchievementToken {
     this.x = x;
     this.y = y;
     this.size = size;
+
+    this.displayEnabled = true;
   }
 
   display() {
+    if (!this.displayEnabled) {
+      return; //skip display if disabled
+    }
+
     push();
     strokeWeight(3 * this.size);
     stroke(219, 169, 51);
@@ -16,6 +22,9 @@ export default class AchievementToken {
     stroke(0, 0, 0);
     text("SUS", this.x, this.y);
     pop();
+  }
+  removeDisplay() {
+    this.displayEnabled = false;
   }
 }
 
