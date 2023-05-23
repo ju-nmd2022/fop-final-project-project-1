@@ -4,6 +4,7 @@ export default class Interface {
     this.counterColorR = 0;
     this.counterColorG = 255;
     this.counterColorB = 0;
+
     //screw
     this.screws = [
       new Screw(235, 725, 2, 10),
@@ -41,13 +42,22 @@ export default class Interface {
     rect(350, 725, 100, 50, 10);
     pop();
 
+    let seconds = 0;
+    // Increment the seconds
+    seconds += 1;
+
+    // Format the time as "mm:ss"
+    let minutes = floor(seconds / 60);
+    let remainingSeconds = seconds % 60;
+    let time = nf(minutes, 2) + ":" + nf(remainingSeconds, 2);
+
     //code inspired by p5js website
     push();
     fill(0, 0, 0);
     textFont("DS-Digital");
     textSize(40);
     textAlign(CENTER);
-    text(0 + 2 + ":" + 0 + 1, 400, 762.5);
+    text(time, 400, 762.5);
     pop();
 
     //right rectangle

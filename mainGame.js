@@ -7,6 +7,7 @@ import KeyCard from "./objects/keyCard";
 import Floor from "./objects/floorClass";
 import LockedDoor from "./objects/lockedDoor";
 import AchievementToken from "./objects/achievementToken";
+import Briefcase from "./objects/briefcase";
 
 //levels imported
 import FirstLevel from "./objects/levels/firstLevel";
@@ -17,7 +18,7 @@ function setup() {
   createCanvas(800, 800);
 }
 
-let state = "levelOne";
+let state = "levelThree";
 const playerSpeed = 4;
 
 let keyCardBooleans = [false, false, false]; // Set the initial values to true
@@ -105,15 +106,15 @@ function draw() {
     tokenLevelOne.removeDisplay();
   }
   if (
-    player2.playerX > 35 &&
-    player2.playerX < 45 &&
-    player2.playerY > 410 &&
+    player2.playerX > 25 &&
+    player2.playerX < 85 &&
+    player2.playerY > 402 &&
     player2.playerY < 430
   ) {
     tokenBooleans[1] = true;
     tokenLevelTwo.removeDisplay();
   }
-  if (player3.playerX < 55 && player3.playerY > 665 && player3.playerY < 678) {
+  if (player3.playerX < 80 && player3.playerY > 665 && player3.playerY < 678) {
     tokenBooleans[2] = true;
     tokenLevelThree.removeDisplay();
   }
@@ -173,14 +174,14 @@ let enemy3 = new Enemy(400, 70, 3);
 let enemy4 = new Enemy(520, 490, 3);
 
 //keycards the player "picks up" on the map
-let keyCardlevelOne = new KeyCard(32, 630);
-let keyCardlevelTwo = new KeyCard(722.5, 212.75);
-let keyCardlevelThree = new KeyCard(111, 316);
+let keyCardlevelOne = new KeyCard(32, 630, 97, 114, 24, 97, 114, 24);
+let keyCardlevelTwo = new KeyCard(722.5, 212.75, 236, 117, 120, 236, 117, 120);
+let keyCardlevelThree = new KeyCard(111, 316, 159, 153, 137, 159, 153, 137);
 
 //tokens
-let tokenLevelOne = new AchievementToken(525, 100, 0.5);
-let tokenLevelTwo = new AchievementToken(40, 420, 0.5);
-let tokenLevelThree = new AchievementToken(47, 670, 0.5);
+let tokenLevelOne = new AchievementToken(525, 100, 0.9);
+let tokenLevelTwo = new AchievementToken(45, 417, 0.9);
+let tokenLevelThree = new AchievementToken(60 + 5, 660 - 2.5, 0.9);
 
 //lockedDoors
 // let LockedDoorFirst = new LockedDoor(485, 665, 40, 25);
@@ -312,3 +313,5 @@ let Wall83 = new Wall(310, 520, 230, 10);
 
 let Floor60 = new Floor(0, 350, 310, 80);
 let Floor61 = new Floor(310, 270, 230, 250);
+
+let BriefcaseElement = new Briefcase(200, 180);

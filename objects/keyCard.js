@@ -1,14 +1,23 @@
 export default class KeyCard {
-  constructor(x, y) {
+  constructor(
+    x,
+    y,
+    keyCardColorR,
+    keyCardColorG,
+    keyCardColorB,
+    playerColorR,
+    playerColorG,
+    playerColorB
+  ) {
     this.x = x;
     this.y = y;
-    this.keyCardColorR = 100;
-    this.keyCardColorG = 100;
-    this.keyCardColorB = 200;
+    this.keyCardColorR = keyCardColorR;
+    this.keyCardColorG = keyCardColorG;
+    this.keyCardColorB = keyCardColorB;
 
-    this.playerColorR = 100;
-    this.playerColorG = 25;
-    this.playerColorB = 105;
+    this.playerColorR = playerColorR;
+    this.playerColorG = playerColorG;
+    this.playerColorB = playerColorB;
 
     this.displayEnabled = true;
   }
@@ -70,6 +79,6 @@ export default class KeyCard {
 }
 
 //keycards shown on interface
-let keyCardInstanceFirst = new KeyCard(30, 730);
-let keyCardInstanceSecond = new KeyCard(100, 730);
-let keyCardInstanceThird = new KeyCard(170, 730);
+let keyCardInstanceFirst = new KeyCard(30, 730, 97, 114, 24, 97, 114, 24);
+let keyCardInstanceSecond = new KeyCard(100, 730, 236, 117, 120, 236, 117, 120);
+let keyCardInstanceThird = new KeyCard(170, 730, 159, 153, 137, 159, 153, 137);

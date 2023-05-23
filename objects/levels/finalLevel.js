@@ -22,8 +22,8 @@ export default class FinalLevel {
     Wall82.display();
     Wall83.display();
 
-    //ENEMIES
-
+    //Briefcase
+    BriefcaseElement.display();
     //PLAYER
     player4.display();
 

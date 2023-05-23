@@ -43,7 +43,8 @@ export default class FirstLevel {
     Wall87.display();
 
     //LockedDoorFirst.display();
-
+    keyCardlevelOne.display();
+    tokenLevelOne.display();
     //ENEMIES
     enemy1.display();
     enemy1.update();
@@ -59,9 +60,6 @@ export default class FirstLevel {
 
     //PLAYER
     player.display();
-
-    keyCardlevelOne.display();
-    tokenLevelOne.display();
 
     interfaceInstance.display();
     // Display walls

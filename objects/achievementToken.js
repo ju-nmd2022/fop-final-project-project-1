@@ -15,12 +15,11 @@ export default class AchievementToken {
     push();
     strokeWeight(3 * this.size);
     stroke(219, 169, 51);
-    fill(238, 181, 49);
+    fill(238, 191, 59);
     ellipse(this.x, this.y, 50 * this.size);
-    textSize(15 * this.size);
+    textSize(18 * this.size);
     textAlign(CENTER);
-    stroke(0, 0, 0);
-    text("SUS", this.x, this.y);
+    text("SUS", this.x, this.y + 7);
     pop();
   }
   removeDisplay() {

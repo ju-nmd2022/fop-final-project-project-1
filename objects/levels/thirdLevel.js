@@ -58,6 +58,8 @@ export default class ThirdLevel {
     Wall76.display();
     Wall89.display();
 
+    keyCardlevelThree.display();
+    tokenLevelThree.display();
     //ENEMIES
     enemy10.display();
     enemy10.update();
@@ -79,9 +81,6 @@ export default class ThirdLevel {
     enemy18.update();
     //PLAYER
     player3.display();
-
-    keyCardlevelThree.display();
-    tokenLevelThree.display();
 
     interfaceInstance.display();
     // Display walls

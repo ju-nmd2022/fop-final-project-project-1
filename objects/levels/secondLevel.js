@@ -56,6 +56,8 @@ export default class SecondLevel {
     Wall44.display();
     Wall90.display();
 
+    keyCardlevelTwo.display();
+    tokenLevelTwo.display();
     //ENEMIES
     enemy5.display();
     enemy5.update();
@@ -77,9 +79,6 @@ export default class SecondLevel {
 
     //PLAYER
     player2.display();
-
-    keyCardlevelTwo.display();
-    tokenLevelTwo.display();
 
     interfaceInstance.display();
     // Display walls
