@@ -8,13 +8,19 @@ export default class Enemy {
   }
 
   update() {
-    // Check if it's been 3 seconds since the last switch
-    if (millis() - this.lastSwitchTime > 4500) {
-      // Change the rotation speed direction
-      this.rotationSpeed *= -1;
-      // Update the last switch time to now
-      this.lastSwitchTime = millis();
+    const switchInterval = 4500; // Interval for switching rotation speed (in milliseconds)
+
+    if (!this.switchTimeout) {
+      // If switchTimeout doesn't exist, set it to a new timeout
+      this.switchTimeout = setTimeout(() => {
+        // Change the rotation speed direction
+        this.rotationSpeed *= -1;
+        // Reset switchTimeout and update the rotation
+        this.switchTimeout = null;
+        this.enemyRotation += this.rotationSpeed;
+      }, switchInterval);
     }
+
     // Update the rotation based on the current speed
     this.enemyRotation += this.rotationSpeed;
   }
