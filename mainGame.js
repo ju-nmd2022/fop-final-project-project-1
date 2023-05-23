@@ -58,11 +58,12 @@ function draw() {
     keyCardlevelTwo.removeDisplay();
   }
   if (
-    keyCardInstanceSecond === true &&
-    keyCardBooleans[1] === true &&
-    player2.playerX > 260 &&
-    player2.playerX < 330 &&
-    player2.playerY > 700
+    (keyCardInstanceSecond =
+      true &&
+      keyCardBooleans[1] === true &&
+      player2.playerX > 260 &&
+      player2.playerX < 330 &&
+      player2.playerY > 700)
   ) {
     state = "levelThree";
   }
