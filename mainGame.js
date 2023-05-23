@@ -15,7 +15,7 @@ function setup() {
   createCanvas(800, 800);
 }
 
-let state = "levelTwo";
+let state = "levelOne";
 const playerSpeed = 4;
 
 let keyCardBooleans = [false, false, false]; // Set the initial values to true
@@ -53,17 +53,16 @@ function draw() {
     state = "levelTwo";
   }
 
-  if (player2.playerX > 730 && player2.playerY > 420) {
+  if (player2.playerX > 715 && player2.playerY > 215) {
     keyCardBooleans[1] = true;
     keyCardlevelTwo.removeDisplay();
   }
   if (
-    (keyCardInstanceSecond =
-      true &&
-      keyCardBooleans[1] === true &&
-      player2.playerX > 260 &&
-      player2.playerX < 330 &&
-      player2.playerY > 700)
+    keyCardInstanceSecond === true &&
+    keyCardBooleans[1] === true &&
+    player2.playerX > 260 &&
+    player2.playerX < 330 &&
+    player2.playerY > 700
   ) {
     state = "levelThree";
   }
