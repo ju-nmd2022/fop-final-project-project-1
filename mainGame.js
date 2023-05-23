@@ -5,6 +5,7 @@ import Enemy from "./objects/enemyclass";
 import Interface from "./objects/interface";
 import KeyCard from "./objects/keyCard";
 import Floor from "./objects/floorClass";
+import LockedDoor from "./objects/lockedDoor";
 
 //levels imported
 import FirstLevel from "./objects/levels/firstLevel";
@@ -141,6 +142,9 @@ let enemy4 = new Enemy(520, 490, 3);
 let keyCardlevelOne = new KeyCard(32, 630);
 let keyCardlevelTwo = new KeyCard(722.5, 212.75);
 let keyCardlevelThree = new KeyCard(111, 316);
+
+//lockedDoors
+//let LockedDoorFirst = new LockedDoor(485, 665, 40, 25);
 
 // level 2
 let player2 = new Player(75, 30, 0, playerSpeed);

@@ -42,6 +42,8 @@ export default class FirstLevel {
     Wall86.display();
     Wall87.display();
 
+    //LockedDoorFirst.display();
+
     //ENEMIES
     enemy1.display();
     enemy1.update();
