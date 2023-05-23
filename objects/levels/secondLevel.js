@@ -10,6 +10,22 @@ export default class SecondLevel {
 
   display() {
     clear();
+    //FLOOR
+    Floor10.display();
+    Floor11.display();
+    Floor12.display();
+    Floor13.display();
+    Floor14.display();
+    Floor15.display();
+    Floor16.display();
+    Floor17.display();
+    Floor18.display();
+    Floor19.display();
+    Floor20.display();
+    Floor21.display();
+    Floor22.display();
+
+    //WALL
     Wall17.display();
     Wall18.display();
     Wall19.display();
@@ -38,18 +54,27 @@ export default class SecondLevel {
     Wall42.display();
     Wall43.display();
     Wall44.display();
+    Wall90.display();
 
     //ENEMIES
     enemy5.display();
     enemy5.update();
+
     enemy6.display();
     enemy6.update();
+
     enemy7.display();
     enemy7.update();
+
     enemy8.display();
     enemy8.update();
+
     enemy9.display();
     enemy9.update();
+
+    enemy21.display();
+    enemy21.update();
+
     //PLAYER
     player2.display();
 
