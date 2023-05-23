@@ -10,6 +10,20 @@ export default class ThirdLevel {
 
   display() {
     clear();
+
+    Floor30.display();
+    Floor31.display();
+    Floor32.display();
+    Floor33.display();
+    Floor34.display();
+    Floor35.display();
+    Floor36.display();
+    Floor37.display();
+    Floor38.display();
+    Floor39.display();
+    Floor40.display();
+    Floor41.display();
+
     Wall45.display();
     Wall46.display();
     Wall47.display();

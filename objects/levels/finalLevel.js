@@ -9,6 +9,10 @@ export default class FinalLevel {
   }
   display() {
     clear();
+    //FLOOR
+    Floor60.display();
+    Floor61.display();
+
     //WALL
     Wall77.display();
     Wall78.display();

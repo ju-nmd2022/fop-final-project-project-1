@@ -15,7 +15,7 @@ function setup() {
   createCanvas(800, 800);
 }
 
-let state = "levelOne";
+let state = "levelFinal";
 const playerSpeed = 4;
 
 let keyCardBooleans = [false, false, false]; // Set the initial values to true
@@ -68,10 +68,10 @@ function draw() {
     state = "levelThree";
   }
   if (
-    player3.playerX > 120 &&
-    player3.playerX < 140 &&
-    player3.playerY > 530 &&
-    player3.playerY < 550
+    player3.playerX > 105 &&
+    player3.playerX < 160 &&
+    player3.playerY > 320 &&
+    player3.playerY < 350
   ) {
     keyCardBooleans[2] = true;
     keyCardlevelThree.removeDisplay();
@@ -139,7 +139,7 @@ let enemy4 = new Enemy(520, 490, 3);
 //keycards the player "picks up" on the map
 let keyCardlevelOne = new KeyCard(30, 630);
 let keyCardlevelTwo = new KeyCard(722.5, 212.75);
-let keyCardlevelThree = new KeyCard(117, 520);
+let keyCardlevelThree = new KeyCard(111, 316);
 
 // level 2
 let player2 = new Player(75, 30, 0, playerSpeed);
@@ -205,7 +205,7 @@ let enemy13 = new Enemy(455, 335, 0.5);
 let enemy14 = new Enemy(487, 155, 3);
 let enemy15 = new Enemy(230, 490, 0);
 let enemy16 = new Enemy(265, 190, 4);
-let enemy17 = new Enemy(55, 540, 5.5);
+let enemy17 = new Enemy(60, 330, 5.5);
 let enemy18 = new Enemy(120, 635, 3);
 
 let Wall45 = new Wall(650, 0, 10, 300);
@@ -229,20 +229,33 @@ let Wall62 = new Wall(290, 440, 130, 10);
 let Wall63 = new Wall(290, 520, 130, 10);
 let Wall64 = new Wall(280, 520, 10, 180);
 let Wall65 = new Wall(200, 200, 10, 430);
-let Wall66 = new Wall(20, 130, 10, 450);
+let Wall66 = new Wall(20, 130, 10, 250);
 let Wall67 = new Wall(120, 200, 90, 10);
-let Wall68 = new Wall(110, 200, 10, 300);
-let Wall69 = new Wall(120, 490, 60, 10);
-let Wall70 = new Wall(30, 570, 150, 10);
-let Wall71 = new Wall(170, 500, 10, 70);
+let Wall68 = new Wall(110, 200, 10, 100);
+let Wall69 = new Wall(120, 290, 60, 10);
+let Wall70 = new Wall(30, 370, 150, 10);
+let Wall71 = new Wall(170, 300, 10, 70);
 let Wall72 = new Wall(30, 690, 250, 10);
 let Wall73 = new Wall(20, 610, 10, 90);
 let Wall74 = new Wall(30, 610, 110, 10);
 let Wall75 = new Wall(140, 610, 10, 20);
 let Wall76 = new Wall(140, 630, 70, 10);
 
+let Floor30 = new Floor(660, 0, 70, 690);
+let Floor31 = new Floor(510, 300, 150, 70);
+let Floor32 = new Floor(430, 120, 80, 570);
+let Floor33 = new Floor(510, 630, 150, 60);
+let Floor34 = new Floor(30, 130, 400, 70);
+let Floor35 = new Floor(30, 200, 80, 100);
+let Floor36 = new Floor(210, 200, 70, 440);
+let Floor37 = new Floor(30, 300, 140, 70);
+let Floor38 = new Floor(140, 640, 140, 60);
+let Floor39 = new Floor(30, 620, 110, 70);
+let Floor40 = new Floor(280, 450, 150, 70);
+let Floor41 = new Floor(730, 360, 90, 70);
+
 //win room (level 4)
-let player4 = new Player(20, 400, 0, playerSpeed);
+let player4 = new Player(30, 395, 0, playerSpeed);
 
 let Wall77 = new Wall(0, 350, 300, 10);
 let Wall78 = new Wall(0, 430, 300, 10);
@@ -251,3 +264,6 @@ let Wall80 = new Wall(310, 260, 230, 10);
 let Wall81 = new Wall(540, 260, 10, 270);
 let Wall82 = new Wall(300, 430, 10, 100);
 let Wall83 = new Wall(310, 520, 230, 10);
+
+let Floor60 = new Floor(0, 350, 310, 80);
+let Floor61 = new Floor(310, 270, 230, 250);
