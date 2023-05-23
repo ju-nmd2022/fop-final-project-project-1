@@ -79,6 +79,7 @@ export default class SecondLevel {
     player2.display();
 
     keyCardlevelTwo.display();
+    tokenLevelTwo.display();
 
     interfaceInstance.display();
     // Display walls

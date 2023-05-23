@@ -61,6 +61,7 @@ export default class FirstLevel {
     player.display();
 
     keyCardlevelOne.display();
+    tokenLevelOne.display();
 
     interfaceInstance.display();
     // Display walls

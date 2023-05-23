@@ -6,6 +6,7 @@ import Interface from "./objects/interface";
 import KeyCard from "./objects/keyCard";
 import Floor from "./objects/floorClass";
 import LockedDoor from "./objects/lockedDoor";
+import AchievementToken from "./objects/achievementToken";
 
 //levels imported
 import FirstLevel from "./objects/levels/firstLevel";
@@ -27,6 +28,14 @@ const keyCards = [
   keyCardInstanceThird,
 ];
 
+let tokenBooleans = [false, false, false];
+
+const tokens = [
+  AchievementTokenInstanceFirst,
+  AchievementTokenInstanceSecond,
+  AchievementTokenInstanceThird,
+];
+
 function draw() {
   states();
   //KEYCARDS
@@ -37,6 +46,12 @@ function draw() {
     if (keyCardBooleans[i]) {
       // If the boolean value is true, display the key card
       keyCards[i].display();
+    }
+  }
+
+  for (let i = 0; i < tokens.length; i++) {
+    if (tokenBooleans[i]) {
+      tokens[i].display();
     }
   }
   // Check if the player is in levelOne and at the specified position to pick up the key card
@@ -143,8 +158,13 @@ let keyCardlevelOne = new KeyCard(32, 630);
 let keyCardlevelTwo = new KeyCard(722.5, 212.75);
 let keyCardlevelThree = new KeyCard(111, 316);
 
+//tokens
+let tokenLevelOne = new AchievementToken(525, 100, 0.5);
+let tokenLevelTwo = new AchievementToken(40, 420, 0.5);
+let tokenLevelThree = new AchievementToken(47, 670, 0.5);
+
 //lockedDoors
-//let LockedDoorFirst = new LockedDoor(485, 665, 40, 25);
+// let LockedDoorFirst = new LockedDoor(485, 665, 40, 25);
 
 // level 2
 let player2 = new Player(75, 30, 0, playerSpeed);
