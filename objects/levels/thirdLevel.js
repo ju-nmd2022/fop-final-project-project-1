@@ -56,6 +56,7 @@ export default class ThirdLevel {
     Wall74.display();
     Wall75.display();
     Wall76.display();
+    Wall89.display();
 
     //ENEMIES
     enemy10.display();
@@ -140,6 +141,7 @@ export default class ThirdLevel {
         Wall74,
         Wall75,
         Wall76,
+        Wall89,
       ],
       dx,
       dy
