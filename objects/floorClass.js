@@ -10,7 +10,7 @@ export default class Floor {
   display() {
     push();
     noStroke();
-    fill(205, 190, 200);
+    fill(205, 190, 150);
     rect(this.floorX, this.floorY, this.floorWidth, this.floorHeight);
     pop();
   }

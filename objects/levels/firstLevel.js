@@ -10,7 +10,7 @@ export default class FirstLevel {
 
   display() {
     clear();
-    background(244, 110, 100);
+    //add background here if wanted
     //FLOOR
     Floor1.display();
     Floor2.display();
