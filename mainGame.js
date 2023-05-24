@@ -10,17 +10,20 @@ import AchievementToken from "./objects/achievementToken.js";
 import Briefcase from "./objects/briefcase.js";
 
 //levels imported
+import StartScreen from "./objects/levels/startScreen.js";
 import FirstLevel from "./objects/levels/firstLevel.js";
 import SecondLevel from "./objects/levels/secondLevel.js";
 import ThirdLevel from "./objects/levels/thirdLevel.js";
 import FinalLevel from "./objects/levels/finalLevel.js";
+import WinScreen from "./objects/levels/winScreen.js";
+import Winscreen2 from "./objects/levels/winScreen2.js";
 
 function setup() {
   createCanvas(800, 800);
 }
 
-let state = "levelFinal";
-const playerSpeed = 4;
+let state = "levelOne";
+const playerSpeed = 20;
 
 let keyCardInstanceFirst = new KeyCard(30, 730, 97, 114, 24, 97, 114, 24);
 let keyCardInstanceSecond = new KeyCard(100, 730, 236, 117, 120, 236, 117, 120);
@@ -46,8 +49,19 @@ const tokens = [
   AchievementTokenInstanceThird,
 ];
 
+function keyPressed() {
+  if (state === "Start" && keyCode === 13) {
+    state = "levelOne";
+  } else if (state === "Win" && keyCode === 13) {
+    state = "Start";
+  } else if (state === "Win2" && keyCode === 13) {
+    state = "Start";
+  }
+}
+
 function draw() {
   states();
+
   //KEYCARDS
   // Define an array to store the boolean values for each key card
   // Loop through the key card instances
@@ -127,10 +141,20 @@ function draw() {
     tokenBooleans[2] = true;
     tokenLevelThree.removeDisplay();
   }
+
+  if (tokenBooleans[2] === true && player4.playerX > 230) {
+    state = "Win2";
+    player4.playerX = 20;
+  } else if (player4.playerX > 230) {
+    state = "Win";
+    player4.playerX = 20;
+  }
 }
 
 function states() {
-  if (state === "levelOne") {
+  if (state === "Start") {
+    Start.display();
+  } else if (state === "levelOne") {
     levelOne.display();
     levelOne.move();
   } else if (state === "levelTwo") {
@@ -142,6 +166,10 @@ function states() {
   } else if (state === "levelFinal") {
     levelFinal.display();
     levelFinal.move();
+  } else if (state === "Win") {
+    Win1.display();
+  } else if (state === "Win2") {
+    Win2.display();
   }
 }
 

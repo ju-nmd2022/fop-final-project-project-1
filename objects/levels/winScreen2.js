@@ -1,4 +1,4 @@
-export default class WinScreen {
+export default class Winscreen2 {
   constructor(x, y) {
     this.x = x;
     this.y = y;
@@ -69,22 +69,18 @@ export default class WinScreen {
     fill(0, 0, 0);
     textAlign(CENTER);
     textSize(12);
-    text("Orange is \n SUS!", 535, 430);
+    text("YOU ARE \n SUS!!!!", 535, 430);
     pop();
     pop();
 
     fill(0, 0, 0);
     textSize(30);
     textAlign(CENTER);
-    text("Oh my god! I better get this \n information back to HQ! ", 400, 570);
+    text("This can't be!!\n NOOOOOO!!!!! ", 400, 570);
 
     textSize(12);
-    text(
-      "press enter to play again \n collect all tokens to get secret ending?\n D: ",
-      650,
-      690
-    );
+    text("press enter to play again? D: ", 650, 690);
   }
 }
 
-let Win1 = new WinScreen();
+let Win2 = new Winscreen2();
