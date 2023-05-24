@@ -18,9 +18,8 @@ import FinalLevel from "./objects/levels/finalLevel.js";
 function setup() {
   createCanvas(800, 800);
 }
-window.setup = setup;
 
-let state = "levelOne";
+let state = "levelFinal";
 const playerSpeed = 4;
 
 let keyCardInstanceFirst = new KeyCard(30, 730, 97, 114, 24, 97, 114, 24);
@@ -219,8 +218,8 @@ let Wall25 = new Wall(80, 390, 10, 70);
 let Wall26 = new Wall(80, 380, 80, 10);
 let Wall27 = new Wall(150, 390, 10, 290);
 let Wall28 = new Wall(160, 670, 90, 10);
-let Wall29 = new Wall(250, 670, 10, 30);
-let Wall30 = new Wall(330, 670, 10, 30);
+let Wall29 = new Wall(250, 670, 10, 70);
+let Wall30 = new Wall(330, 670, 10, 70);
 let Wall31 = new Wall(230, 250, 10, 360);
 let Wall32 = new Wall(240, 250, 280, 10);
 let Wall33 = new Wall(510, 80, 10, 92);
@@ -236,6 +235,7 @@ let Wall42 = new Wall(340, 670, 300, 10);
 let Wall43 = new Wall(630, 460, 10, 210);
 let Wall44 = new Wall(580, 460, 50, 10);
 let Wall90 = new Wall(30, -5, 90, 10);
+let Wall91 = new Wall(250, 740, 90, 10);
 
 let Floor10 = new Floor(40, 0, 70, 240);
 let Floor11 = new Floor(150, 170, 370, 80);
@@ -266,8 +266,8 @@ let enemy18 = new Enemy(120, 635, 3);
 
 let Wall45 = new Wall(650, 0, 10, 300);
 let Wall46 = new Wall(730, 0, 10, 350);
-let Wall47 = new Wall(730, 350, 70, 10);
-let Wall48 = new Wall(730, 430, 70, 10);
+let Wall47 = new Wall(730, 350, 100, 10);
+let Wall48 = new Wall(730, 430, 100, 10);
 let Wall49 = new Wall(730, 440, 10, 260);
 let Wall50 = new Wall(430, 690, 300, 10);
 let Wall51 = new Wall(650, 370, 10, 260);
@@ -297,6 +297,7 @@ let Wall74 = new Wall(30, 610, 110, 10);
 let Wall75 = new Wall(140, 610, 10, 20);
 let Wall76 = new Wall(140, 630, 70, 10);
 let Wall89 = new Wall(650, -5, 90, 10);
+let Wall92 = new Wall(830, 350, 10, 90);
 
 let Floor30 = new Floor(660, 0, 70, 690);
 let Floor31 = new Floor(510, 300, 150, 70);
@@ -321,6 +322,7 @@ let Wall80 = new Wall(310, 260, 230, 10);
 let Wall81 = new Wall(540, 260, 10, 270);
 let Wall82 = new Wall(300, 430, 10, 100);
 let Wall83 = new Wall(310, 520, 230, 10);
+let Wall95 = new Wall(-5, 350, 10, 90);
 
 let Floor60 = new Floor(0, 350, 310, 80);
 let Floor61 = new Floor(310, 270, 230, 250);

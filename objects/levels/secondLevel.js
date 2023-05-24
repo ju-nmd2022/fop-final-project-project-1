@@ -55,6 +55,7 @@ export default class SecondLevel {
     Wall43.display();
     Wall44.display();
     Wall90.display();
+    Wall91.display();
 
     keyCardlevelTwo.display();
     tokenLevelTwo.display();
@@ -135,6 +136,7 @@ export default class SecondLevel {
         Wall43,
         Wall44,
         Wall90,
+        Wall91,
       ],
       dx,
       dy

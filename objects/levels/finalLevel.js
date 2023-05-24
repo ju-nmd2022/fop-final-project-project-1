@@ -21,6 +21,7 @@ export default class FinalLevel {
     Wall81.display();
     Wall82.display();
     Wall83.display();
+    Wall95.display();
 
     //Briefcase
     BriefcaseElement.display();
@@ -52,7 +53,7 @@ export default class FinalLevel {
 
     // Update the player's position
     player4.move(
-      [Wall77, Wall78, Wall79, Wall80, Wall81, Wall82, Wall83],
+      [Wall77, Wall78, Wall79, Wall80, Wall81, Wall82, Wall83, Wall95],
       dx,
       dy
     );
