@@ -17,12 +17,13 @@ import ThirdLevel from "./objects/levels/thirdLevel.js";
 import FinalLevel from "./objects/levels/finalLevel.js";
 import WinScreen from "./objects/levels/winScreen.js";
 import Winscreen2 from "./objects/levels/winScreen2.js";
+import LoseScreen from "./objects/levels/loseScreen.js";
 
 function setup() {
   createCanvas(800, 800);
 }
 
-let state = "levelThree";
+let state = "Start";
 const playerSpeed = 20;
 
 let keyCardInstanceFirst = new KeyCard(30, 730, 97, 114, 24, 97, 114, 24);
@@ -56,6 +57,9 @@ function keyPressed() {
     window.location.reload();
     state = "Start";
   } else if (state === "Win2" && keyCode === 13) {
+    window.location.reload();
+    state = "Start";
+  } else if (state === "Lose" && keyCode === 13) {
     window.location.reload();
     state = "Start";
   }
@@ -170,6 +174,8 @@ function states() {
     Win1.display();
   } else if (state === "Win2") {
     Win2.display();
+  } else if (state === "Lose") {
+    Lose.display();
   }
 }
 
