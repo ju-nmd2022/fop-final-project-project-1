@@ -30,6 +30,3 @@ export default class AchievementToken {
 function draw() {
   AchievementTokenInstanceFirst.display();
 }
-let AchievementTokenInstanceFirst = new AchievementToken(617.5 - 5, 750, 1);
-let AchievementTokenInstanceSecond = new AchievementToken(677.5, 750, 1);
-let AchievementTokenInstanceThird = new AchievementToken(737.5 + 5, 750, 1);

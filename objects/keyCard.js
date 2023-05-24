@@ -79,6 +79,3 @@ export default class KeyCard {
 }
 
 //keycards shown on interface
-let keyCardInstanceFirst = new KeyCard(30, 730, 97, 114, 24, 97, 114, 24);
-let keyCardInstanceSecond = new KeyCard(100, 730, 236, 117, 120, 236, 117, 120);
-let keyCardInstanceThird = new KeyCard(170, 730, 159, 153, 137, 159, 153, 137);

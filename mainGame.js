@@ -1,25 +1,31 @@
 //objects imported
-import Wall from "./objects/wallclass";
-import Player from "./objects/playerclass";
-import Enemy from "./objects/enemyclass";
-import Interface from "./objects/interface";
-import KeyCard from "./objects/keyCard";
-import Floor from "./objects/floorClass";
-import LockedDoor from "./objects/lockedDoor";
-import AchievementToken from "./objects/achievementToken";
-import Briefcase from "./objects/briefcase";
+import Wall from "./objects/wallclass.js";
+import Player from "./objects/playerclass.js";
+import Enemy from "./objects/enemyclass.js";
+import Interface from "./objects/interface.js";
+import KeyCard from "./objects/keyCard.js";
+import Floor from "./objects/floorClass.js";
+import LockedDoor from "./objects/lockedDoor.js";
+import AchievementToken from "./objects/achievementToken.js";
+import Briefcase from "./objects/briefcase.js";
 
 //levels imported
-import FirstLevel from "./objects/levels/firstLevel";
-import SecondLevel from "./objects/levels/secondLevel";
-import ThirdLevel from "./objects/levels/thirdLevel";
-import FinalLevel from "./objects/levels/finalLevel";
+import FirstLevel from "./objects/levels/firstLevel.js";
+import SecondLevel from "./objects/levels/secondLevel.js";
+import ThirdLevel from "./objects/levels/thirdLevel.js";
+import FinalLevel from "./objects/levels/finalLevel.js";
+
 function setup() {
   createCanvas(800, 800);
 }
+window.setup = setup;
 
-let state = "levelThree";
+let state = "levelOne";
 const playerSpeed = 4;
+
+let keyCardInstanceFirst = new KeyCard(30, 730, 97, 114, 24, 97, 114, 24);
+let keyCardInstanceSecond = new KeyCard(100, 730, 236, 117, 120, 236, 117, 120);
+let keyCardInstanceThird = new KeyCard(170, 730, 159, 153, 137, 159, 153, 137);
 
 let keyCardBooleans = [false, false, false]; // Set the initial values to true
 // Define an array to store the key card instances
@@ -28,6 +34,10 @@ const keyCards = [
   keyCardInstanceSecond,
   keyCardInstanceThird,
 ];
+
+let AchievementTokenInstanceFirst = new AchievementToken(617.5 - 5, 750, 1);
+let AchievementTokenInstanceSecond = new AchievementToken(677.5, 750, 1);
+let AchievementTokenInstanceThird = new AchievementToken(737.5 + 5, 750, 1);
 
 let tokenBooleans = [false, false, false];
 
@@ -136,6 +146,7 @@ function states() {
   }
 }
 
+//window."varaibleName" = value
 // Create player
 let player = new Player(50, 100, 0, playerSpeed);
 //level 1

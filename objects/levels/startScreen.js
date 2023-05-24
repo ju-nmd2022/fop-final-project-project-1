@@ -15,7 +15,7 @@ function setup() {
 }
 
 function draw() {
-  background(98, 98, 98);
+  background(105, 105, 105);
 
   //center of object
   let x = 300;
@@ -37,7 +37,7 @@ function draw() {
   //text, background
   push();
   noStroke();
-  fill(71, 71, 71);
+  fill(90, 90, 90);
   rect(100, 100, 600, 150, 25);
   rect(100, 300, 200, 200, 25);
   rect(325, 300, 150, 200, 25);
