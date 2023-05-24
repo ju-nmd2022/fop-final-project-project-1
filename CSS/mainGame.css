@@ -13,4 +13,10 @@ body {
   /* This centers our sketch vertically. */
   align-items: center;
   background-color: antiquewhite;
+  background-image: url(../assets/1104367.jpg);
+  background-size: cover;
+}
+img {
+  width: 1000px;
+  margin-bottom: 650px;
 }
