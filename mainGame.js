@@ -22,7 +22,7 @@ function setup() {
   createCanvas(800, 800);
 }
 
-let state = "levelOne";
+let state = "levelThree";
 const playerSpeed = 20;
 
 let keyCardInstanceFirst = new KeyCard(30, 730, 97, 114, 24, 97, 114, 24);
@@ -53,8 +53,10 @@ function keyPressed() {
   if (state === "Start" && keyCode === 13) {
     state = "levelOne";
   } else if (state === "Win" && keyCode === 13) {
+    window.location.reload();
     state = "Start";
   } else if (state === "Win2" && keyCode === 13) {
+    window.location.reload();
     state = "Start";
   }
 }
@@ -144,10 +146,8 @@ function draw() {
 
   if (tokenBooleans[2] === true && player4.playerX > 230) {
     state = "Win2";
-    player4.playerX = 20;
   } else if (player4.playerX > 230) {
     state = "Win";
-    player4.playerX = 20;
   }
 }
 
