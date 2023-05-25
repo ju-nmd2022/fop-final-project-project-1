@@ -4,9 +4,6 @@ class FinalLevel {
     this.y = y;
   }
 
-  update() {
-    // update the position of your particle
-  }
   display() {
     clear();
     //FLOOR
@@ -29,7 +26,6 @@ class FinalLevel {
     player.display();
 
     interfaceInstance.display();
-    // Display walls
   }
 
   move() {

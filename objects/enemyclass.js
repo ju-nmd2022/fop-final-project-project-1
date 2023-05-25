@@ -9,6 +9,8 @@ class Enemy {
     this.dotDistanceY = 0;
   }
 
+  //ChatGPT helped with explaing how to code
+  // the rotation of enemies
   update() {
     const switchInterval = 4500; // Interval for switching rotation speed (in milliseconds)
 
@@ -63,28 +65,5 @@ class Enemy {
     pop();
   }
 }
-//level 1 enemies
-// let enemy1 = new Enemy(110, 140, 6);
-// let enemy2 = new Enemy(150, 400, 3.5);
-// let enemy3 = new Enemy(400, 70, 3);
-// let enemy4 = new Enemy(520, 490, 3);
-
-// // level 2
-// let enemy5 = new Enemy(165, 360, 0.1);
-// let enemy6 = new Enemy(260, 650, 5.5);
-// let enemy7 = new Enemy(240, 185, 2);
-// let enemy8 = new Enemy(560, 210, 3.5);
-// let enemy9 = new Enemy(590, 500, 3.2);
-
-// // level 3
-// let enemy10 = new Enemy(700, 350, 4);
-// let enemy11 = new Enemy(710, 665, 4);
-// let enemy12 = new Enemy(485, 485, 4);
-// let enemy13 = new Enemy(455, 335, 0.5);
-// let enemy14 = new Enemy(487, 155, 3);
-// let enemy15 = new Enemy(230, 490, 0);
-// let enemy16 = new Enemy(265, 190, 4);
-// let enemy17 = new Enemy(60, 540, 5.5);
-// let enemy18 = new Enemy(120, 635, 3);
 
 function draw() {}

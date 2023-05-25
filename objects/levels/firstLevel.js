@@ -4,10 +4,6 @@ class FirstLevel {
     this.y = y;
   }
 
-  update() {
-    // update the position of your particle
-  }
-
   display() {
     clear();
     //add background here if wanted
@@ -42,7 +38,6 @@ class FirstLevel {
     Wall86.display();
     Wall87.display();
 
-    //LockedDoorFirst.display();
     keyCardlevelOne.display();
     tokenLevelOne.display();
     //ENEMIES

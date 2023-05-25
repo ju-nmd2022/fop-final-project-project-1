@@ -4,10 +4,6 @@ class SecondLevel {
     this.y = y;
   }
 
-  update() {
-    // update the position of your particle
-  }
-
   display() {
     clear();
     //FLOOR
@@ -82,7 +78,6 @@ class SecondLevel {
     player.display();
 
     interfaceInstance.display();
-    // Display walls
   }
 
   move() {

@@ -22,10 +22,6 @@ class KeyCard {
     this.displayEnabled = true;
   }
 
-  update() {
-    // Update the position of your particle
-  }
-
   display() {
     if (!this.displayEnabled) {
       return; // Skip displaying if disabled
@@ -77,5 +73,3 @@ class KeyCard {
     this.displayEnabled = false;
   }
 }
-
-//keycards shown on interface

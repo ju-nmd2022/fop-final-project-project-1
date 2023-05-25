@@ -10,7 +10,6 @@ let state = "Start";
 const playerSpeed = 5;
 let img;
 
-//loop all enemyies and check if they are dist()
 //STARTSCREEN
 let Start = new StartScreen();
 
@@ -64,17 +63,10 @@ let keyCardlevelOne = new KeyCard(32, 630, 97, 114, 24, 97, 114, 24);
 //token
 let tokenLevelOne = new AchievementToken(525, 100, 0.9);
 
-//lockedDoors
-// let LockedDoorFirst = new LockedDoor(485, 665, 40, 25);
-
 // LEVEL 2
 //screen
 let levelTwo = new SecondLevel();
 
-// if (room) {
-//   player.playerX = 75;
-//   player.playerY = 30;
-// }
 //wall
 let Wall17 = new Wall(30, 0, 10, 230);
 let Wall18 = new Wall(110, 0, 10, 170);
@@ -325,7 +317,7 @@ function draw() {
     }
   }
 
-  // Loop through the token
+  // Loop through the tokens
   for (let i = 0; i < tokens.length; i++) {
     if (tokenBooleans[i]) {
       tokens[i].display();
@@ -459,7 +451,7 @@ function draw() {
     state = "Win";
   }
 }
-
+//All states
 function states() {
   if (state === "Start") {
     Start.display();
