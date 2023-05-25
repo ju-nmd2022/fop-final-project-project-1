@@ -1,12 +1,12 @@
 function setup() {
   createCanvas(800, 800);
   frameRate(30);
+  img = loadImage("../assets/dead.jpeg");
 }
 //state
 let state = "Start";
 const playerSpeed = 5;
 let img;
-img = loadImage("../assets/dead.jpeg");
 
 //loop all enemyies and check if they are dist()
 //STARTSCREEN
