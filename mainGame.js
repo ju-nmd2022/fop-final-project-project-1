@@ -1,10 +1,12 @@
 function setup() {
   createCanvas(800, 800);
   frameRate(30);
+  img = loadImage("../assets/dead.jpeg");
 }
 //state
 let state = "Start";
 const playerSpeed = 5;
+let img;
 
 //loop all enemyies and check if they are dist()
 //STARTSCREEN
@@ -313,12 +315,11 @@ function draw() {
     );
     //VisionCone detection
     if (detectionDistance < 32) {
-      // If the boolean value is true, display the key card
-      console.log("detection");
+      state = "Lose";
     }
     //Enemy detection
     else if (detectionDistanceEnemy < 30) {
-      console.log("detection1");
+      state = "Lose";
     }
   }
 

@@ -42,22 +42,13 @@ class Interface {
     rect(350, 725, 100, 50, 10);
     pop();
 
-    let seconds = 0;
-    // Increment the seconds
-    seconds += 1;
-
-    // Format the time as "mm:ss"
-    let minutes = floor(seconds / 60);
-    let remainingSeconds = seconds % 60;
-    let time = nf(minutes, 2) + ":" + nf(remainingSeconds, 2);
-
     //code inspired by p5js website
     push();
     fill(0, 0, 0);
     textFont("DS-Digital");
     textSize(40);
     textAlign(CENTER);
-    text(time, 400, 762.5);
+    text("13:37", 400, 762.5);
     pop();
 
     //right rectangle
