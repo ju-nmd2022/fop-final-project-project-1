@@ -81,7 +81,7 @@ class ThirdLevel {
     enemy18.display();
     enemy18.update();
     //PLAYER
-    player3.display();
+    player.display();
 
     interfaceInstance.display();
     // Display walls
@@ -107,7 +107,7 @@ class ThirdLevel {
     }
 
     // Update the player's position
-    player3.move(
+    player.move(
       [
         Wall45,
         Wall46,
@@ -149,6 +149,6 @@ class ThirdLevel {
     );
 
     // Update the player's position and rotation
-    player3.updateRotation(dx, dy);
+    player.updateRotation(dx, dy);
   }
 }

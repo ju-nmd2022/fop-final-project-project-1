@@ -5,6 +5,8 @@ class Enemy {
     this.enemyRotation = enemyRotation;
     this.rotationSpeed = 0.02;
     this.lastSwitchTime = 0;
+    this.dotDistanceX = 0;
+    this.dotDistanceY = 0;
   }
 
   update() {
@@ -23,8 +25,12 @@ class Enemy {
 
     // Update the rotation based on the current speed
     this.enemyRotation += this.rotationSpeed;
-  }
 
+    this.dotDistanceX =
+      this.enemyX + cos(this.enemyRotation - HALF_PI + this.rotationSpeed) * 40;
+    this.dotDistanceY =
+      this.enemyY + sin(this.enemyRotation - HALF_PI + this.rotationSpeed) * 40;
+  }
   display() {
     push();
     translate(this.enemyX, this.enemyY);

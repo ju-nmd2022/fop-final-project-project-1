@@ -2,163 +2,11 @@ function setup() {
   createCanvas(800, 800);
   frameRate(30);
 }
-
+//state
 let state = "Start";
-const playerSpeed = 4;
+const playerSpeed = 5;
 
-let keyCardInstanceFirst = new KeyCard(30, 730, 97, 114, 24, 97, 114, 24);
-let keyCardInstanceSecond = new KeyCard(100, 730, 236, 117, 120, 236, 117, 120);
-let keyCardInstanceThird = new KeyCard(170, 730, 159, 153, 137, 159, 153, 137);
-
-let keyCardBooleans = [false, false, false]; // Set the initial values to true
-// Define an array to store the key card instances
-const keyCards = [
-  keyCardInstanceFirst,
-  keyCardInstanceSecond,
-  keyCardInstanceThird,
-];
-
-let AchievementTokenInstanceFirst = new AchievementToken(617.5 - 5, 750, 1);
-let AchievementTokenInstanceSecond = new AchievementToken(677.5, 750, 1);
-let AchievementTokenInstanceThird = new AchievementToken(737.5 + 5, 750, 1);
-
-let tokenBooleans = [false, false, false];
-
-const tokens = [
-  AchievementTokenInstanceFirst,
-  AchievementTokenInstanceSecond,
-  AchievementTokenInstanceThird,
-];
-
-function keyPressed() {
-  if (state === "Start" && keyCode === 13) {
-    state = "levelOne";
-  } else if (state === "Win" && keyCode === 13) {
-    window.location.reload();
-    state = "Start";
-  } else if (state === "Win2" && keyCode === 13) {
-    window.location.reload();
-    state = "Start";
-  } else if (state === "Lose" && keyCode === 13) {
-    window.location.reload();
-    state = "Start";
-  }
-}
-
-function draw() {
-  states();
-
-  //KEYCARDS
-  // Define an array to store the boolean values for each key card
-  // Loop through the key card instances
-  for (let i = 0; i < keyCards.length; i++) {
-    // Check the corresponding boolean value for the current key card
-    if (keyCardBooleans[i]) {
-      // If the boolean value is true, display the key card
-      keyCards[i].display();
-    }
-  }
-
-  for (let i = 0; i < tokens.length; i++) {
-    if (tokenBooleans[i]) {
-      tokens[i].display();
-    }
-  }
-  // Check if the player is in levelOne and at the specified position to pick up the key card
-  if (state === "levelOne" && player.playerX < 75 && player.playerY > 630) {
-    keyCardBooleans[0] = true;
-    keyCardlevelOne.removeDisplay();
-  }
-  if (
-    (keyCardInstanceFirst =
-      true &&
-      keyCardBooleans[0] === true &&
-      player.playerX > 470 &&
-      player.playerY > 700)
-  ) {
-    state = "levelTwo";
-  }
-
-  if (player2.playerX > 715 && player2.playerY > 215) {
-    keyCardBooleans[1] = true;
-    keyCardlevelTwo.removeDisplay();
-  }
-  if (
-    (keyCardInstanceSecond =
-      true &&
-      keyCardBooleans[1] === true &&
-      player2.playerX > 260 &&
-      player2.playerX < 330 &&
-      player2.playerY > 700)
-  ) {
-    state = "levelThree";
-  }
-  if (
-    player3.playerX > 105 &&
-    player3.playerX < 160 &&
-    player3.playerY > 320 &&
-    player3.playerY < 350
-  ) {
-    keyCardBooleans[2] = true;
-    keyCardlevelThree.removeDisplay();
-  }
-  if (
-    (keyCardInstanceThird =
-      true && keyCardBooleans[2] === true && player3.playerX > 800)
-  ) {
-    state = "levelFinal";
-  }
-
-  //picking up tokens
-  if (player.playerX > 515 && player.playerY < 117 && player.playerY > 85) {
-    tokenBooleans[0] = true;
-    tokenLevelOne.removeDisplay();
-  }
-  if (
-    player2.playerX > 25 &&
-    player2.playerX < 85 &&
-    player2.playerY > 402 &&
-    player2.playerY < 430
-  ) {
-    tokenBooleans[1] = true;
-    tokenLevelTwo.removeDisplay();
-  }
-  if (player3.playerX < 80 && player3.playerY > 665 && player3.playerY < 678) {
-    tokenBooleans[2] = true;
-    tokenLevelThree.removeDisplay();
-  }
-
-  if (tokenBooleans[2] === true && player4.playerX > 230) {
-    state = "Win2";
-  } else if (player4.playerX > 230) {
-    state = "Win";
-  }
-}
-
-function states() {
-  if (state === "Start") {
-    Start.display();
-  } else if (state === "levelOne") {
-    levelOne.display();
-    levelOne.move();
-  } else if (state === "levelTwo") {
-    levelTwo.display();
-    levelTwo.move();
-  } else if (state === "levelThree") {
-    levelThree.display();
-    levelThree.move();
-  } else if (state === "levelFinal") {
-    levelFinal.display();
-    levelFinal.move();
-  } else if (state === "Win") {
-    Win1.display();
-  } else if (state === "Win2") {
-    Win2.display();
-  } else if (state === "Lose") {
-    Lose.display();
-  }
-}
-
+//loop all enemyies and check if they are dist()
 //STARTSCREEN
 let Start = new StartScreen();
 
@@ -219,9 +67,10 @@ let tokenLevelOne = new AchievementToken(525, 100, 0.9);
 //screen
 let levelTwo = new SecondLevel();
 
-//player
-let player2 = new Player(75, 30, 0, playerSpeed);
-
+// if (room) {
+//   player.playerX = 75;
+//   player.playerY = 30;
+// }
 //wall
 let Wall17 = new Wall(30, 0, 10, 230);
 let Wall18 = new Wall(110, 0, 10, 170);
@@ -284,9 +133,6 @@ let tokenLevelTwo = new AchievementToken(45, 417, 0.9);
 // LEVEL 3
 //screen
 let levelThree = new ThirdLevel();
-
-//player
-let player3 = new Player(695, 30, 0, playerSpeed);
 
 //wall
 let Wall45 = new Wall(650, 0, 10, 300);
@@ -359,9 +205,6 @@ let tokenLevelThree = new AchievementToken(60 + 5, 660 - 2.5, 0.9);
 //screen
 let levelFinal = new FinalLevel();
 
-//player
-let player4 = new Player(30, 395, 0, playerSpeed);
-
 //wall
 let Wall77 = new Wall(0, 350, 300, 10);
 let Wall78 = new Wall(0, 430, 300, 10);
@@ -379,6 +222,264 @@ let Floor61 = new Floor(310, 270, 230, 250);
 //brief
 let BriefcaseElement = new Briefcase(200, 180);
 
+let keyCardInstanceFirst = new KeyCard(30, 730, 97, 114, 24, 97, 114, 24);
+let keyCardInstanceSecond = new KeyCard(100, 730, 236, 117, 120, 236, 117, 120);
+let keyCardInstanceThird = new KeyCard(170, 730, 159, 153, 137, 159, 153, 137);
+
+let keyCardBooleans = [false, false, false]; // Set the initial values to true
+// Define an array to store the key card instances
+const keyCards = [
+  keyCardInstanceFirst,
+  keyCardInstanceSecond,
+  keyCardInstanceThird,
+];
+
+let AchievementTokenInstanceFirst = new AchievementToken(617.5 - 5, 750, 1);
+let AchievementTokenInstanceSecond = new AchievementToken(677.5, 750, 1);
+let AchievementTokenInstanceThird = new AchievementToken(737.5 + 5, 750, 1);
+
+let tokenBooleans = [false, false, false];
+
+const tokens = [
+  AchievementTokenInstanceFirst,
+  AchievementTokenInstanceSecond,
+  AchievementTokenInstanceThird,
+];
+let enemies = [
+  enemy1,
+  enemy2,
+  enemy3,
+  enemy4,
+  enemy5,
+  enemy6,
+  enemy7,
+  enemy8,
+  enemy9,
+  enemy10,
+  enemy11,
+  enemy12,
+  enemy13,
+  enemy14,
+  enemy15,
+  enemy16,
+  enemy17,
+  enemy18,
+  enemy21,
+];
+
+function keyPressed() {
+  if (state === "Start" && keyCode === 13) {
+    state = "levelOne";
+  } else if (state === "Win" && keyCode === 13) {
+    window.location.reload();
+    state = "Start";
+  } else if (state === "Win2" && keyCode === 13) {
+    window.location.reload();
+    state = "Start";
+  } else if (state === "Lose" && keyCode === 13) {
+    window.location.reload();
+    state = "Start";
+  }
+}
+
+function draw() {
+  states();
+
+  //KEYCARDS
+  // Loop through the key card instances
+  for (let i = 0; i < keyCards.length; i++) {
+    // Check the corresponding boolean value for the current key card
+    if (keyCardBooleans[i]) {
+      // If the boolean value is true, display the key card
+      keyCards[i].display();
+    }
+  }
+  // Loop through the enemies
+  for (let i = 0; i < enemies.length; i++) {
+    //defines the deteactionDistance
+    //detectionDistance VisionCone
+    let detectionDistance = dist(
+      player.playerX,
+      player.playerY,
+      enemies[i].dotDistanceX,
+      enemies[i].dotDistanceY
+    );
+    //detectionDistance Enemy
+    let detectionDistanceEnemy = dist(
+      player.playerX,
+      player.playerY,
+      enemies[i].enemyX,
+      enemies[i].enemyY
+    );
+    //VisionCone detection
+    if (detectionDistance < 32) {
+      // If the boolean value is true, display the key card
+      console.log("detection");
+    }
+    //Enemy detection
+    else if (detectionDistanceEnemy < 30) {
+      console.log("detection1");
+    }
+  }
+
+  // Loop through the token
+  for (let i = 0; i < tokens.length; i++) {
+    if (tokenBooleans[i]) {
+      tokens[i].display();
+    }
+  }
+  //STATE ONE BEGINS
+  if (state === "levelOne") {
+    enemies = [enemy1, enemy2, enemy3, enemy4];
+  }
+  //pick up Keycard1
+  if (state === "levelOne" && player.playerX < 75 && player.playerY > 630) {
+    keyCardBooleans[0] = true;
+    keyCardlevelOne.removeDisplay();
+  }
+  //pick up Token1
+  if (
+    state === "levelOne" &&
+    player.playerX > 515 &&
+    player.playerY < 117 &&
+    player.playerY > 85
+  ) {
+    tokenBooleans[0] = true;
+    tokenLevelOne.removeDisplay();
+  }
+
+  //state levelOne ->> will be levelTwo
+  if (
+    state === "levelOne" &&
+    keyCardBooleans[0] === true &&
+    player.playerX > 470 &&
+    player.playerY > 700
+  ) {
+    //loading state levelTwo
+    state = "levelTwo";
+    enemies = [enemy5, enemy6, enemy7, enemy8, enemy9, enemy21];
+    player.playerX = 75;
+    player.playerY = 30;
+  }
+  //pick up keyCard2
+  if (state === "levelTwo" && player.playerX > 715 && player.playerY > 215) {
+    keyCardBooleans[1] = true;
+    keyCardlevelTwo.removeDisplay();
+  }
+  //pick up Token2
+  if (
+    state === "levelTwo" &&
+    player.playerX > 25 &&
+    player.playerX < 85 &&
+    player.playerY > 402 &&
+    player.playerY < 430
+  ) {
+    tokenBooleans[1] = true;
+    tokenLevelTwo.removeDisplay();
+  }
+
+  //state levelTwo ->> will be levelThree
+  if (
+    state === "levelTwo" &&
+    keyCardBooleans[1] === true &&
+    player.playerX > 260 &&
+    player.playerX < 330 &&
+    player.playerY > 700
+  ) {
+    //loading state levelThree
+    state = "levelThree";
+    enemies = [
+      enemy10,
+      enemy11,
+      enemy12,
+      enemy13,
+      enemy14,
+      enemy15,
+      enemy16,
+      enemy17,
+      enemy18,
+    ];
+    player.playerX = 695;
+    player.playerY = 30;
+  }
+  //pick up Keycard3
+  if (
+    state === "levelThree" &&
+    player.playerX > 105 &&
+    player.playerX < 160 &&
+    player.playerY > 320 &&
+    player.playerY < 350
+  ) {
+    keyCardBooleans[2] = true;
+    keyCardlevelThree.removeDisplay();
+  }
+  //pick up Token3
+  if (
+    state === "levelThree" &&
+    player.playerX < 80 &&
+    player.playerY > 665 &&
+    player.playerY < 678
+  ) {
+    tokenBooleans[2] = true;
+    tokenLevelThree.removeDisplay();
+  }
+  //state levelThree ->> will be levelFinal
+  if (
+    state === "levelThree" &&
+    keyCardBooleans[2] === true &&
+    player.playerX > 800
+  ) {
+    //loading state levelFinal
+    state = "levelFinal";
+    player.playerX = 30;
+    player.playerY = 395;
+    enemies = [];
+  }
+
+  //win conditions
+  if (
+    state === "levelFinal" &&
+    tokenBooleans[2] === true &&
+    player.playerX > 400 &&
+    player.playerX < 430 &&
+    player.playerY > 390 &&
+    player.playerY < 410
+  ) {
+    state = "Win2";
+  } else if (
+    state === "levelFinal" &&
+    player.playerX > 400 &&
+    player.playerX < 430 &&
+    player.playerY > 390 &&
+    player.playerY < 410
+  ) {
+    state = "Win";
+  }
+}
+
+function states() {
+  if (state === "Start") {
+    Start.display();
+  } else if (state === "levelOne") {
+    levelOne.display();
+    levelOne.move();
+  } else if (state === "levelTwo") {
+    levelTwo.display();
+    levelTwo.move();
+  } else if (state === "levelThree") {
+    levelThree.display();
+    levelThree.move();
+  } else if (state === "levelFinal") {
+    levelFinal.display();
+    levelFinal.move();
+  } else if (state === "Win") {
+    Win1.display();
+  } else if (state === "Win2") {
+    Win2.display();
+  } else if (state === "Lose") {
+    Lose.display();
+  }
+}
 //WINDOW VARIABLE
 window.setup = setup;
 window.draw = draw;

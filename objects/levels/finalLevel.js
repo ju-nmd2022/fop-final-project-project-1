@@ -26,7 +26,7 @@ class FinalLevel {
     //Briefcase
     BriefcaseElement.display();
     //PLAYER
-    player4.display();
+    player.display();
 
     interfaceInstance.display();
     // Display walls
@@ -52,13 +52,13 @@ class FinalLevel {
     }
 
     // Update the player's position
-    player4.move(
+    player.move(
       [Wall77, Wall78, Wall79, Wall80, Wall81, Wall82, Wall83, Wall95],
       dx,
       dy
     );
 
     // Update the player's position and rotation
-    player4.updateRotation(dx, dy);
+    player.updateRotation(dx, dy);
   }
 }

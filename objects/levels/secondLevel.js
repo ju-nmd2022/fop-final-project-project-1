@@ -79,7 +79,7 @@ class SecondLevel {
     enemy21.update();
 
     //PLAYER
-    player2.display();
+    player.display();
 
     interfaceInstance.display();
     // Display walls
@@ -105,7 +105,7 @@ class SecondLevel {
     }
 
     // Update the player's position
-    player2.move(
+    player.move(
       [
         Wall17,
         Wall18,
@@ -143,6 +143,6 @@ class SecondLevel {
     );
 
     // Update the player's position and rotation
-    player2.updateRotation(dx, dy);
+    player.updateRotation(dx, dy);
   }
 }
