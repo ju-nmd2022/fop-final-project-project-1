@@ -1,9 +1,10 @@
 function setup() {
   createCanvas(800, 800);
+  frameRate(30);
 }
 
 let state = "Start";
-const playerSpeed = 20;
+const playerSpeed = 4;
 
 let keyCardInstanceFirst = new KeyCard(30, 730, 97, 114, 24, 97, 114, 24);
 let keyCardInstanceSecond = new KeyCard(100, 730, 236, 117, 120, 236, 117, 120);
