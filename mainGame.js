@@ -1,7 +1,9 @@
 function setup() {
   createCanvas(800, 800);
   frameRate(30);
-  img = loadImage("../assets/dead.jpeg");
+}
+function preload() {
+  img = loadImage("assets/dead.jpeg");
 }
 //state
 let state = "Start";
