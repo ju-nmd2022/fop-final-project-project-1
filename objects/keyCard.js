@@ -1,4 +1,4 @@
-export default class KeyCard {
+class KeyCard {
   constructor(
     x,
     y,

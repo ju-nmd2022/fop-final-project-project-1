@@ -1,4 +1,4 @@
-export default class Floor {
+class Floor {
   constructor(floorX, floorY, floorWidth, floorHeight) {
     this.floorX = floorX;
     this.floorY = floorY;

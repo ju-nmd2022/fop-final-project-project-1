@@ -1,4 +1,4 @@
-export default class Enemy {
+class Enemy {
   constructor(enemyX, enemyY, enemyRotation) {
     this.enemyX = enemyX;
     this.enemyY = enemyY;

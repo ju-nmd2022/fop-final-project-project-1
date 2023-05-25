@@ -1,4 +1,4 @@
-export default class Interface {
+class Interface {
   constructor() {
     //counter
     this.counterColorR = 0;

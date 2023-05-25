@@ -1,4 +1,4 @@
-export default class AchievementToken {
+class AchievementToken {
   constructor(x, y, size) {
     this.x = x;
     this.y = y;

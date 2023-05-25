@@ -1,4 +1,4 @@
-export default class Briefcase {
+class Briefcase {
   constructor(briefcaseX, briefcaseY) {
     this.briefcaseX = briefcaseX;
     this.briefcaseY = briefcaseY;

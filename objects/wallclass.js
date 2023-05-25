@@ -1,4 +1,4 @@
-export default class Wall {
+class Wall {
   constructor(wallX, wallY, width, height) {
     this.wallX = wallX;
     this.wallY = wallY;

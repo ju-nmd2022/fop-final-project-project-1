@@ -1,4 +1,4 @@
-export default class LockedDoor {
+class LockedDoor {
   constructor(doorX, doorY, doorWidth, doorHeight) {
     this.doorX = doorX;
     this.doorY = doorY;

@@ -1,4 +1,4 @@
-export default class FirstLevel {
+class FirstLevel {
   constructor(x, y) {
     this.x = x;
     this.y = y;
@@ -116,5 +116,3 @@ export default class FirstLevel {
     player.updateRotation(dx, dy);
   }
 }
-
-let levelOne = new FirstLevel();

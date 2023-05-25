@@ -1,24 +1,3 @@
-//objects imported
-import Wall from "./objects/wallclass.js";
-import Player from "./objects/playerclass.js";
-import Enemy from "./objects/enemyclass.js";
-import Interface from "./objects/interface.js";
-import KeyCard from "./objects/keyCard.js";
-import Floor from "./objects/floorClass.js";
-import LockedDoor from "./objects/lockedDoor.js";
-import AchievementToken from "./objects/achievementToken.js";
-import Briefcase from "./objects/briefcase.js";
-
-//levels imported
-import StartScreen from "./objects/levels/startScreen.js";
-import FirstLevel from "./objects/levels/firstLevel.js";
-import SecondLevel from "./objects/levels/secondLevel.js";
-import ThirdLevel from "./objects/levels/thirdLevel.js";
-import FinalLevel from "./objects/levels/finalLevel.js";
-import WinScreen from "./objects/levels/winScreen.js";
-import Winscreen2 from "./objects/levels/winScreen2.js";
-import LoseScreen from "./objects/levels/loseScreen.js";
-
 function setup() {
   createCanvas(800, 800);
 }
@@ -179,10 +158,17 @@ function states() {
   }
 }
 
-//window."varaibleName" = value
-// Create player
+//STARTSCREEN
+let Start = new StartScreen();
+
+//LEVEL 1
+//screen
+let levelOne = new FirstLevel();
+
+//player
 let player = new Player(50, 100, 0, playerSpeed);
-//level 1
+
+//wall
 let Wallone = new Wall(0, 60, 350, 10);
 let Walltwo = new Wall(0, 130, 90, 10);
 let Wallthree = new Wall(170, 130, 390, 10);
@@ -204,6 +190,7 @@ let Wall85 = new Wall(540, 450, 10, 290);
 let Wall86 = new Wall(460, 740, 90, 10);
 let Wall87 = new Wall(-5, 60, 10, 80);
 
+//floor
 let Floor1 = new Floor(0, 70, 560, 60);
 let Floor2 = new Floor(360, 10, 60, 60);
 let Floor3 = new Floor(90, 130, 80, 319);
@@ -212,6 +199,7 @@ let Floor5 = new Floor(100, 460, 450, 80);
 let Floor6 = new Floor(470, 540, 80, 200);
 let Floor7 = new Floor(1410, 140, 130, 70);
 
+//enemy
 let enemy1 = new Enemy(110, 140, 6);
 let enemy2 = new Enemy(150, 400, 3.5);
 let enemy3 = new Enemy(400, 70, 3);
@@ -219,27 +207,21 @@ let enemy4 = new Enemy(520, 490, 3);
 
 //keycards the player "picks up" on the map
 let keyCardlevelOne = new KeyCard(32, 630, 97, 114, 24, 97, 114, 24);
-let keyCardlevelTwo = new KeyCard(722.5, 212.75, 236, 117, 120, 236, 117, 120);
-let keyCardlevelThree = new KeyCard(111, 316, 159, 153, 137, 159, 153, 137);
 
-//tokens
+//token
 let tokenLevelOne = new AchievementToken(525, 100, 0.9);
-let tokenLevelTwo = new AchievementToken(45, 417, 0.9);
-let tokenLevelThree = new AchievementToken(60 + 5, 660 - 2.5, 0.9);
 
 //lockedDoors
 // let LockedDoorFirst = new LockedDoor(485, 665, 40, 25);
 
-// level 2
+// LEVEL 2
+//screen
+let levelTwo = new SecondLevel();
+
+//player
 let player2 = new Player(75, 30, 0, playerSpeed);
 
-let enemy5 = new Enemy(165, 360, 6.5);
-let enemy6 = new Enemy(275, 665, -1);
-let enemy7 = new Enemy(240, 190, 2);
-let enemy8 = new Enemy(560, 210.5, -3.5);
-let enemy9 = new Enemy(585, 490, -3.2);
-let enemy21 = new Enemy(535, 610, 7.2);
-
+//wall
 let Wall17 = new Wall(30, 0, 10, 230);
 let Wall18 = new Wall(110, 0, 10, 170);
 let Wall19 = new Wall(30, 230, 120, 10);
@@ -271,6 +253,7 @@ let Wall44 = new Wall(580, 460, 50, 10);
 let Wall90 = new Wall(30, -5, 90, 10);
 let Wall91 = new Wall(250, 740, 90, 10);
 
+//floor
 let Floor10 = new Floor(40, 0, 70, 240);
 let Floor11 = new Floor(150, 170, 370, 80);
 let Floor12 = new Floor(160, 250, 70, 420);
@@ -285,19 +268,26 @@ let Floor20 = new Floor(710, 90, 70, 170);
 let Floor21 = new Floor(110, 170, 40, 70);
 let Floor22 = new Floor(250, 670, 80, 50);
 
-// level 3
+//enemy
+let enemy5 = new Enemy(165, 360, 6.5);
+let enemy6 = new Enemy(275, 665, -1);
+let enemy7 = new Enemy(240, 190, 2);
+let enemy8 = new Enemy(560, 210.5, -3.5);
+let enemy9 = new Enemy(585, 490, -3.2);
+let enemy21 = new Enemy(535, 610, 7.2);
+//keyCard
+let keyCardlevelTwo = new KeyCard(722.5, 212.75, 236, 117, 120, 236, 117, 120);
+//token
+let tokenLevelTwo = new AchievementToken(45, 417, 0.9);
+
+// LEVEL 3
+//screen
+let levelThree = new ThirdLevel();
+
+//player
 let player3 = new Player(695, 30, 0, playerSpeed);
 
-let enemy10 = new Enemy(700, 350, 4);
-let enemy11 = new Enemy(710, 665, 4);
-let enemy12 = new Enemy(485, 485, 4);
-let enemy13 = new Enemy(455, 335, 0.5);
-let enemy14 = new Enemy(487, 155, 3);
-let enemy15 = new Enemy(230, 490, 0);
-let enemy16 = new Enemy(265, 190, 4);
-let enemy17 = new Enemy(60, 330, 5.5);
-let enemy18 = new Enemy(120, 635, 3);
-
+//wall
 let Wall45 = new Wall(650, 0, 10, 300);
 let Wall46 = new Wall(730, 0, 10, 350);
 let Wall47 = new Wall(730, 350, 100, 10);
@@ -333,6 +323,7 @@ let Wall76 = new Wall(140, 630, 70, 10);
 let Wall89 = new Wall(650, -5, 90, 10);
 let Wall92 = new Wall(830, 350, 10, 90);
 
+//floor
 let Floor30 = new Floor(660, 0, 70, 690);
 let Floor31 = new Floor(510, 300, 150, 70);
 let Floor32 = new Floor(430, 120, 80, 570);
@@ -346,9 +337,31 @@ let Floor39 = new Floor(30, 620, 110, 70);
 let Floor40 = new Floor(280, 450, 150, 70);
 let Floor41 = new Floor(730, 360, 90, 70);
 
+//enemy
+let enemy10 = new Enemy(700, 350, 4);
+let enemy11 = new Enemy(710, 665, 4);
+let enemy12 = new Enemy(485, 485, 4);
+let enemy13 = new Enemy(455, 335, 0.5);
+let enemy14 = new Enemy(487, 155, 3);
+let enemy15 = new Enemy(230, 490, 0);
+let enemy16 = new Enemy(265, 190, 4);
+let enemy17 = new Enemy(60, 330, 5.5);
+let enemy18 = new Enemy(120, 635, 3);
+
+//keycard
+let keyCardlevelThree = new KeyCard(111, 316, 159, 153, 137, 159, 153, 137);
+
+//token
+let tokenLevelThree = new AchievementToken(60 + 5, 660 - 2.5, 0.9);
+
 //win room (level 4)
+//screen
+let levelFinal = new FinalLevel();
+
+//player
 let player4 = new Player(30, 395, 0, playerSpeed);
 
+//wall
 let Wall77 = new Wall(0, 350, 300, 10);
 let Wall78 = new Wall(0, 430, 300, 10);
 let Wall79 = new Wall(300, 260, 10, 100);
@@ -358,7 +371,14 @@ let Wall82 = new Wall(300, 430, 10, 100);
 let Wall83 = new Wall(310, 520, 230, 10);
 let Wall95 = new Wall(-5, 350, 10, 90);
 
+//floor
 let Floor60 = new Floor(0, 350, 310, 80);
 let Floor61 = new Floor(310, 270, 230, 250);
 
+//brief
 let BriefcaseElement = new Briefcase(200, 180);
+
+//WINDOW VARIABLE
+window.setup = setup;
+window.draw = draw;
+window.keyPressed = keyPressed;

@@ -1,4 +1,4 @@
-export default class StartScreen {
+class StartScreen {
   constructor(x, y) {
     this.x = x;
     this.y = y;
@@ -130,5 +130,3 @@ export default class StartScreen {
     text("Press ENTER to start", 800 / 2, 750);
   }
 }
-
-let Start = new StartScreen();

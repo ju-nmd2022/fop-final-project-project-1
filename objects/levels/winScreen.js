@@ -1,4 +1,4 @@
-export default class WinScreen {
+class WinScreen {
   constructor(x, y) {
     this.x = x;
     this.y = y;

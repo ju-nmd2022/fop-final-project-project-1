@@ -1,4 +1,4 @@
-export default class Player {
+class Player {
   constructor(playerX, playerY, playerRotation, playerSpeed) {
     this.playerX = playerX;
     this.playerY = playerY;

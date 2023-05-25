@@ -1,4 +1,4 @@
-export default class LoseScreen {
+class LoseScreen {
   constructor(x, y) {
     this.x = x;
     this.y = y;

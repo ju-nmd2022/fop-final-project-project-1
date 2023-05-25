@@ -1,4 +1,4 @@
-export default class FinalLevel {
+class FinalLevel {
   constructor(x, y) {
     this.x = x;
     this.y = y;
@@ -62,5 +62,3 @@ export default class FinalLevel {
     player4.updateRotation(dx, dy);
   }
 }
-
-let levelFinal = new FinalLevel();
