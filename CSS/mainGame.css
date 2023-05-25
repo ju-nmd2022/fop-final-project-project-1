@@ -1,24 +1,23 @@
 html,
 body {
   height: 100vh;
+  width: 100%;
+  margin: 0;
 }
 
 body {
-  margin: 0;
   display: flex;
-
-  /* This centers our sketch horizontally. */
-
-  /* This centers our sketch vertically. */
-
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: antiquewhite;
   background-image: url(../assets/1104367.jpg);
   background-size: cover;
 }
+
 img {
   width: 1000px;
-  height: 100px;
-
   position: relative;
-  margin-top: 100px;
+  margin-top: 20px;
+  margin-bottom: 10px; /* Add margin between elements */
 }
